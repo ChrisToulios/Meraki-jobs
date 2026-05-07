@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#f5efe4"/>
+  
+  <!-- Sun decoration -->
+  <radialGradient id="sun" cx="0.85" cy="0.3" r="0.4">
+    <stop offset="0%" stop-color="#d4a64a" stop-opacity="0.5"/>
+    <stop offset="100%" stop-color="#c95a3c" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#sun)"/>
+  
+  <!-- Wave decoration bottom -->
+  <path d="M0,500 Q300,460 600,490 T1200,480 L1200,630 L0,630 Z" fill="#1e4d6b" opacity="0.08"/>
+  <path d="M0,540 Q300,510 600,530 T1200,520 L1200,630 L0,630 Z" fill="#1e4d6b" opacity="0.12"/>
+  
+  <!-- Brand mark -->
+  <g transform="translate(80, 80)">
+    <circle cx="0" cy="0" r="14" fill="#c95a3c"/>
+    <text x="30" y="10" font-family="Manrope, sans-serif" font-size="32" font-weight="600" fill="#0d1b2a" letter-spacing="-0.02em">Μεράκι</text>
+    <text x="30" y="38" font-family="Manrope, sans-serif" font-size="14" font-weight="500" fill="#1e4d6b" letter-spacing="0.2em">ΣΕΖΟΝ '26</text>
+  </g>
+  
+  <!-- Main title -->
+  <text x="80" y="290" font-family="Fraunces, Georgia, serif" font-size="110" font-weight="300" fill="#0d1b2a" letter-spacing="-0.04em">Το <tspan font-style="italic" font-weight="400" fill="#c95a3c">καλοκαίρι</tspan></text>
+  <text x="80" y="400" font-family="Fraunces, Georgia, serif" font-size="110" font-weight="300" fill="#0d1b2a" letter-spacing="-0.04em">σου ξεκινά εδώ.</text>
+  
+  <!-- Subtitle -->
+  <text x="80" y="475" font-family="Manrope, sans-serif" font-size="22" font-weight="400" fill="#0d1b2a" opacity="0.7">Πλατφόρμα σεζονιακής εργασίας · Ξενοδοχεία · Εστίαση · Beach bars</text>
+  
+  <!-- URL -->
+  <text x="80" y="555" font-family="Manrope, sans-serif" font-size="18" font-weight="600" fill="#1e4d6b" letter-spacing="0.05em">meraki-jobs-gr.netlify.app</text>
+</svg>
