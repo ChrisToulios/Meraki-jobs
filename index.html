@@ -1,0 +1,3246 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Μεράκι · Σεζόν 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d1b2a;
+    --paper: #f5efe4;
+    --paper-warm: #ede4d0;
+    --aegean: #1e4d6b;
+    --aegean-deep: #0f2e44;
+    --terracotta: #c95a3c;
+    --olive: #6b7a4a;
+    --gold: #d4a64a;
+    --shadow: rgba(13, 27, 42, 0.08);
+    --line: rgba(13, 27, 42, 0.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); color: var(--ink); font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+  body::before {
+    content: ""; position: fixed; inset: 0;
+    background-image: 
+      radial-gradient(circle at 15% 20%, rgba(212, 166, 74, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 85% 70%, rgba(30, 77, 107, 0.06) 0%, transparent 50%);
+    pointer-events: none; z-index: 0;
+  }
+  body::after {
+    content: ""; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.04; pointer-events: none; z-index: 1; mix-blend-mode: multiply;
+  }
+  .wrap { position: relative; z-index: 2; }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px; border-bottom: 1px solid var(--line);
+    background: var(--paper); position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(8px); flex-wrap: wrap; gap: 16px;
+  }
+  .brand {
+    display: flex; align-items: baseline; gap: 10px;
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: 1.7rem; letter-spacing: -0.02em; cursor: pointer;
+  }
+  .brand .dot { width: 10px; height: 10px; background: var(--terracotta); border-radius: 50%; transform: translateY(-3px); }
+  .brand small { font-family: 'Manrope', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--aegean); font-weight: 500; }
+
+  .nav-tabs { display: flex; gap: 4px; background: var(--paper-warm); padding: 4px; border-radius: 100px; flex-wrap: wrap; }
+  .nav-tabs button {
+    background: none; border: none; padding: 10px 18px; cursor: pointer;
+    font-family: inherit; font-size: 0.88rem; font-weight: 500;
+    color: var(--ink); border-radius: 100px; transition: all 0.25s ease;
+  }
+  .nav-tabs button:hover { background: rgba(255,255,255,0.5); }
+  .nav-tabs button.active { background: var(--ink); color: var(--paper); }
+
+  .nav-user { display: flex; align-items: center; gap: 12px; }
+  .nav-user .greeting {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 1rem;
+    color: var(--aegean); padding-right: 8px; border-right: 1px solid var(--line);
+  }
+  .nav-user .badge {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    background: var(--olive); color: var(--paper); padding: 3px 10px; font-weight: 600;
+  }
+  .nav-user .badge.employer { background: var(--terracotta); }
+
+  .hero { padding: 100px 48px 80px; max-width: 1400px; margin: 0 auto; position: relative; }
+  .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 80px; align-items: end; }
+  .hero-label {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--aegean); margin-bottom: 32px; font-weight: 600;
+  }
+  .hero-label::before { content: ""; width: 32px; height: 1px; background: var(--aegean); }
+  h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 0.95; letter-spacing: -0.04em; color: var(--ink); }
+  h1 em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+  h1 .underline { position: relative; display: inline-block; }
+  h1 .underline::after { content: ""; position: absolute; bottom: 8px; left: 0; right: 0; height: 4px; background: var(--gold); z-index: -1; opacity: 0.6; }
+  .hero-side { padding-bottom: 40px; }
+  .hero-side p { font-size: 1.1rem; line-height: 1.7; color: rgba(13, 27, 42, 0.75); margin-bottom: 28px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 24px; border: none; cursor: pointer;
+    font-family: inherit; font-size: 0.88rem; font-weight: 600;
+    letter-spacing: 0.02em; text-decoration: none;
+    transition: all 0.2s ease; border-radius: 0;
+  }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover:not(:disabled) { background: var(--aegean-deep); transform: translateY(-2px); }
+  .btn-secondary { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+  .btn-terracotta { background: var(--terracotta); color: var(--paper); }
+  .btn-terracotta:hover:not(:disabled) { background: #b04929; }
+  .btn-danger { background: transparent; color: var(--terracotta); border: 1px solid var(--terracotta); }
+  .btn-danger:hover { background: var(--terracotta); color: var(--paper); }
+  .btn-small { padding: 8px 16px; font-size: 0.78rem; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 60px auto 0; max-width: 1400px; padding: 0 48px; }
+  .stat { padding: 32px 24px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 400; letter-spacing: -0.02em; color: var(--aegean); }
+  .stat-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(13, 27, 42, 0.6); }
+
+  section { padding: 80px 48px; max-width: 1400px; margin: 0 auto; }
+  .section-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 48px; border-bottom: 1px solid var(--line); padding-bottom: 24px; gap: 16px; flex-wrap: wrap; }
+  h2 { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 400; letter-spacing: -0.02em; }
+  .section-meta { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--aegean); font-weight: 600; }
+
+  .form-card { background: white; padding: 48px; border: 1px solid var(--line); margin-bottom: 32px; box-shadow: 0 2px 24px var(--shadow); }
+  .form-card h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 500; margin-bottom: 8px; }
+  .form-card .sub { font-size: 0.9rem; color: rgba(13, 27, 42, 0.6); margin-bottom: 32px; }
+  .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .form-grid .full { grid-column: 1 / -1; }
+
+  label { display: block; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--aegean); font-weight: 600; margin-bottom: 8px; }
+
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], select, textarea {
+    width: 100%; padding: 12px 14px; border: 1px solid var(--line);
+    background: var(--paper-warm); font-family: inherit;
+    font-size: 0.95rem; color: var(--ink); transition: all 0.2s;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--aegean); background: white; }
+  textarea { min-height: 100px; resize: vertical; }
+
+  .chip-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .chip { padding: 6px 14px; border: 1px solid var(--line); background: var(--paper-warm); cursor: pointer; font-size: 0.85rem; user-select: none; transition: all 0.15s; }
+  .chip:hover { border-color: var(--aegean); }
+  .chip.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  /* Role selector for signup */
+  .role-selector { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+  .role-card {
+    padding: 24px; border: 2px solid var(--line); cursor: pointer;
+    background: var(--paper-warm); transition: all 0.2s; text-align: center;
+  }
+  .role-card:hover { border-color: var(--aegean); }
+  .role-card.active { border-color: var(--ink); background: white; }
+  .role-card .emoji { font-size: 2rem; display: block; margin-bottom: 8px; }
+  .role-card .title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; margin-bottom: 4px; }
+  .role-card .desc { font-size: 0.8rem; color: rgba(13, 27, 42, 0.6); }
+
+  .listings { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+  .card { background: white; border: 1px solid var(--line); padding: 32px; transition: all 0.25s ease; position: relative; display: flex; flex-direction: column; gap: 14px; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px var(--shadow); border-color: var(--aegean); }
+  .card-tag { position: absolute; top: 0; right: 24px; background: var(--terracotta); color: var(--paper); padding: 4px 12px; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; transform: translateY(-50%); }
+  .card-tag.olive { background: var(--olive); }
+  .card-tag.aegean { background: var(--aegean); }
+  .card-mine-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--gold); color: var(--ink); padding: 3px 10px;
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700;
+  }
+  .card h4 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 500; line-height: 1.2; }
+  .card .meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.85rem; color: rgba(13, 27, 42, 0.65); }
+  .card .desc { font-size: 0.92rem; line-height: 1.55; color: rgba(13, 27, 42, 0.8); flex: 1; }
+  .card .skills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .card .skill-tag { padding: 4px 10px; background: var(--paper-warm); font-size: 0.75rem; border: 1px solid var(--line); }
+  .card .footer { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--line); font-size: 0.8rem; color: rgba(13, 27, 42, 0.55); flex-wrap: wrap; gap: 8px; }
+  .card .pay { font-family: 'Fraunces', serif; font-size: 1.1rem; color: var(--terracotta); font-weight: 500; }
+  .card .actions { display: flex; gap: 8px; padding-top: 12px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+  .card .actions button { flex: 1; min-width: 100px; }
+
+  .filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; padding: 20px; background: var(--paper-warm); align-items: center; }
+  .filters label { margin: 0; color: var(--ink); }
+  .filters select, .filters input { background: white; padding: 8px 12px; font-size: 0.9rem; }
+
+  .empty { text-align: center; padding: 80px 24px; color: rgba(13, 27, 42, 0.5); font-style: italic; font-family: 'Fraunces', serif; font-size: 1.1rem; grid-column: 1 / -1; }
+  .empty .btn { margin-top: 24px; font-style: normal; font-family: 'Manrope', sans-serif; }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .toast {
+    position: fixed; top: 100px; right: 32px; z-index: 1000;
+    background: var(--olive); color: var(--paper); padding: 16px 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2); transform: translateX(120%);
+    transition: transform 0.3s ease; max-width: 400px;
+  }
+  .toast.show { transform: translateX(0); }
+  .toast.error { background: var(--terracotta); }
+
+  footer { border-top: 1px solid var(--line); padding: 60px 48px 40px; margin-top: 80px; text-align: center; background: var(--paper-warm); }
+  footer .quote { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.4rem; color: var(--aegean); max-width: 600px; margin: 0 auto 24px; line-height: 1.4; }
+  footer .small { font-size: 0.8rem; color: rgba(13, 27, 42, 0.5); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .deco-sun { position: absolute; top: 80px; right: 60px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, var(--gold) 0%, var(--terracotta) 100%); opacity: 0.25; filter: blur(20px); z-index: -1; }
+
+  .modal-bg { position: fixed; inset: 0; background: rgba(13, 27, 42, 0.7); z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px; }
+  .modal-bg.show { display: flex; }
+  .modal { background: var(--paper); max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 40px; border: 1px solid var(--line); position: relative; }
+  .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--ink); }
+  .modal h3 { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 500; margin-bottom: 8px; }
+  .modal .modal-sub { font-size: 0.9rem; color: rgba(13, 27, 42, 0.6); margin-bottom: 24px; }
+
+  .loader { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--line); border-top-color: var(--ink); border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 8px; vertical-align: middle; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .skeleton { background: var(--paper-warm); height: 280px; animation: pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+  .live-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(107, 122, 74, 0.15); color: var(--olive); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+  .live-badge::before { content: ""; width: 6px; height: 6px; background: var(--olive); border-radius: 50%; animation: pulse-dot 2s ease infinite; }
+  @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  .auth-toggle { text-align: center; margin-top: 24px; font-size: 0.9rem; color: rgba(13, 27, 42, 0.7); }
+  .auth-toggle a { color: var(--aegean); font-weight: 600; cursor: pointer; text-decoration: underline; }
+
+  .auth-section { max-width: 520px; margin: 60px auto; padding: 0 24px; }
+
+  .info-banner {
+    background: rgba(30, 77, 107, 0.08); border-left: 4px solid var(--aegean);
+    padding: 16px 20px; margin-bottom: 24px; font-size: 0.9rem;
+  }
+
+  /* MESSAGING */
+  .messages-container {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 0;
+    background: white;
+    border: 1px solid var(--line);
+    height: 70vh;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  .conv-list {
+    border-right: 1px solid var(--line);
+    overflow-y: auto;
+    background: var(--paper-warm);
+  }
+  .conv-list-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+    background: white;
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .conv-item {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: center;
+    transition: background 0.15s;
+    position: relative;
+  }
+  .conv-item:hover { background: white; }
+  .conv-item.active { background: white; border-left: 3px solid var(--aegean); padding-left: 17px; }
+  .conv-item.unread { background: rgba(212, 166, 74, 0.1); }
+  .conv-item .av {
+    width: 44px; height: 44px; border-radius: 50%;
+    object-fit: cover; background: var(--paper-warm);
+    border: 1px solid var(--line); flex-shrink: 0;
+  }
+  .conv-item .av.placeholder {
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--paper-warm), var(--gold));
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.1rem;
+  }
+  .conv-item .info { min-width: 0; }
+  .conv-item .name {
+    font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .conv-item .preview {
+    font-size: 0.82rem; color: rgba(13, 27, 42, 0.6);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .conv-item.unread .preview { color: var(--ink); font-weight: 500; }
+  .conv-item .time { font-size: 0.7rem; color: rgba(13, 27, 42, 0.5); white-space: nowrap; }
+  .conv-item .unread-dot {
+    position: absolute; top: 50%; right: 8px; transform: translateY(-50%);
+    width: 8px; height: 8px; border-radius: 50%; background: var(--terracotta);
+  }
+
+  .chat-area {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    overflow: hidden;
+  }
+  .chat-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+  }
+  .chat-header .av {
+    width: 40px; height: 40px; border-radius: 50%;
+    object-fit: cover; background: var(--paper-warm);
+    border: 1px solid var(--line);
+  }
+  .chat-header .av.placeholder {
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--paper-warm), var(--gold));
+    font-family: 'Fraunces', serif; font-weight: 600;
+  }
+  .chat-header h5 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 500; }
+  .chat-header .role-tag {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(13, 27, 42, 0.5); font-weight: 600;
+  }
+
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--paper);
+  }
+  .msg-bubble {
+    max-width: 70%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    word-wrap: break-word;
+    position: relative;
+    animation: msg-in 0.2s ease-out;
+  }
+  @keyframes msg-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .msg-bubble.theirs {
+    align-self: flex-start;
+    background: white;
+    color: var(--ink);
+    border-bottom-left-radius: 4px;
+    border: 1px solid var(--line);
+  }
+  .msg-bubble.mine {
+    align-self: flex-end;
+    background: var(--aegean);
+    color: var(--paper);
+    border-bottom-right-radius: 4px;
+  }
+  .msg-bubble .time {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    margin-top: 4px;
+    display: block;
+  }
+  .msg-bubble.mine .time { text-align: right; }
+
+  .day-divider {
+    text-align: center;
+    margin: 12px 0;
+    position: relative;
+  }
+  .day-divider span {
+    background: var(--paper);
+    color: rgba(13, 27, 42, 0.5);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .day-divider::before {
+    content: ""; position: absolute; top: 50%; left: 0; right: 0;
+    height: 1px; background: var(--line); z-index: 0;
+  }
+
+  .chat-input-area {
+    padding: 16px 20px;
+    border-top: 1px solid var(--line);
+    background: white;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+  }
+  .chat-input-area textarea {
+    flex: 1;
+    min-height: 44px;
+    max-height: 120px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    background: var(--paper-warm);
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: none;
+    transition: all 0.15s;
+  }
+  .chat-input-area textarea:focus { outline: none; border-color: var(--aegean); background: white; }
+  .send-btn {
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 0 20px;
+    height: 44px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .send-btn:hover:not(:disabled) { background: var(--aegean-deep); }
+  .send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .chat-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(13, 27, 42, 0.5);
+    padding: 40px;
+    text-align: center;
+  }
+  .chat-empty .icon { font-size: 3.5rem; margin-bottom: 16px; opacity: 0.5; }
+  .chat-empty h4 { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 8px; color: var(--ink); }
+  .chat-empty p { font-size: 0.9rem; max-width: 320px; line-height: 1.5; }
+
+  /* Unread badge in nav */
+  .nav-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--terracotta);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 6px;
+    border-radius: 10px;
+    margin-left: 4px;
+  }
+
+  /* Contact button on cards */
+  .contact-btn-wrap {
+    display: flex; gap: 8px;
+    padding-top: 12px; border-top: 1px solid var(--line);
+  }
+  .contact-btn-wrap button { flex: 1; }
+
+  @media (max-width: 900px) {
+    .messages-container { grid-template-columns: 1fr; height: auto; min-height: auto; }
+    .conv-list { max-height: 300px; border-right: none; border-bottom: 1px solid var(--line); }
+    .chat-area { min-height: 400px; }
+    .messages-container.chat-open .conv-list { display: none; }
+    .messages-container:not(.chat-open) .chat-area { display: none; }
+    .chat-back-btn { display: inline-flex !important; }
+  }
+  .chat-back-btn { display: none; }
+
+  /* FAVORITES BUTTON */
+  .fav-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--line);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 5;
+    backdrop-filter: blur(4px);
+    font-size: 1.1rem;
+  }
+  .fav-btn:hover {
+    transform: scale(1.1);
+    border-color: var(--terracotta);
+    box-shadow: 0 4px 12px rgba(201, 90, 60, 0.2);
+  }
+  .fav-btn.saved {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+    color: white;
+  }
+  .fav-btn.saved:hover { background: #b04929; }
+  .fav-btn .heart-icon { transition: transform 0.2s; }
+  .fav-btn.saved .heart-icon { animation: heart-pop 0.3s ease; }
+  @keyframes heart-pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+  }
+
+  /* UPLOAD STYLES */
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--paper-warm);
+    border: 2px solid var(--line);
+    flex-shrink: 0;
+  }
+  .avatar-lg {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--paper-warm);
+    border: 3px solid white;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+  .avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--paper-warm), var(--gold));
+    color: var(--ink);
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  .avatar-placeholder.lg { font-size: 2.2rem; }
+
+  .card-with-avatar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: start;
+    margin-bottom: 4px;
+  }
+  .card-with-avatar .info { min-width: 0; }
+  .card-with-avatar h4 { margin-bottom: 4px; word-break: break-word; }
+
+  /* Upload zone */
+  .upload-zone {
+    border: 2px dashed var(--line);
+    background: var(--paper-warm);
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .upload-zone:hover { border-color: var(--aegean); background: white; }
+  .upload-zone.has-file { border-style: solid; border-color: var(--olive); background: rgba(107, 122, 74, 0.05); }
+  .upload-zone .icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+  .upload-zone .text { font-size: 0.9rem; color: rgba(13, 27, 42, 0.7); }
+  .upload-zone .hint { font-size: 0.75rem; color: rgba(13, 27, 42, 0.5); margin-top: 4px; }
+  .upload-zone input[type="file"] {
+    position: absolute; inset: 0; opacity: 0; cursor: pointer;
+  }
+
+  .upload-preview {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    background: white;
+    border: 1px solid var(--olive);
+    margin-top: 8px;
+  }
+  .upload-preview img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .upload-preview .file-info { flex: 1; min-width: 0; }
+  .upload-preview .file-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .upload-preview .file-size {
+    font-size: 0.75rem;
+    color: rgba(13, 27, 42, 0.5);
+  }
+  .upload-preview button {
+    background: none;
+    border: 1px solid var(--terracotta);
+    color: var(--terracotta);
+    padding: 4px 12px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8rem;
+  }
+  .upload-preview button:hover { background: var(--terracotta); color: white; }
+
+  .upload-progress {
+    height: 3px;
+    background: var(--paper-warm);
+    margin-top: 12px;
+    overflow: hidden;
+    display: none;
+  }
+  .upload-progress.show { display: block; }
+  .upload-progress .bar {
+    height: 100%;
+    background: var(--aegean);
+    width: 0%;
+    transition: width 0.3s;
+  }
+
+  /* CV download badge */
+  .cv-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: rgba(30, 77, 107, 0.1);
+    color: var(--aegean);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--aegean);
+    transition: all 0.2s;
+  }
+  .cv-badge:hover { background: var(--aegean); color: var(--paper); }
+
+  /* Job logo */
+  .job-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    background: white;
+    border: 1px solid var(--line);
+    padding: 4px;
+    flex-shrink: 0;
+  }
+  .job-logo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper-warm);
+    color: var(--aegean);
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  /* Profile detail (in dashboard) */
+  .profile-banner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    background: white;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--olive);
+    margin-bottom: 16px;
+  }
+  .profile-banner .info { flex: 1; min-width: 0; }
+  .profile-banner h4 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 500; margin-bottom: 4px; }
+  .profile-banner .role-line { color: var(--aegean); font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; }
+  .profile-banner .actions-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+
+  @media (max-width: 600px) {
+    .profile-banner { flex-direction: column; text-align: center; align-items: center; }
+    .profile-banner .info { text-align: center; }
+    .profile-banner .actions-row { justify-content: center; }
+  }
+
+  /* DASHBOARD STYLES */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .dash-stat {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .dash-stat::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--aegean);
+  }
+  .dash-stat.terracotta::before { background: var(--terracotta); }
+  .dash-stat.olive::before { background: var(--olive); }
+  .dash-stat.gold::before { background: var(--gold); }
+  .dash-stat .num {
+    font-family: 'Fraunces', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .dash-stat .label {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(13, 27, 42, 0.65);
+    font-weight: 600;
+  }
+  .dash-stat .sub {
+    font-size: 0.85rem;
+    color: rgba(13, 27, 42, 0.5);
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  .dash-section { margin-bottom: 48px; }
+  .dash-section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .dash-section-title .count {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--aegean);
+    font-weight: 600;
+  }
+
+  .application-card {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 24px;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: start;
+  }
+  .application-card.accepted { border-left: 4px solid var(--olive); }
+  .application-card.rejected { border-left: 4px solid var(--terracotta); opacity: 0.7; }
+  .application-card.pending { border-left: 4px solid var(--gold); }
+
+  .app-info h5 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .app-info .for-job {
+    font-size: 0.85rem;
+    color: var(--aegean);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .app-info .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 0.85rem;
+    color: rgba(13, 27, 42, 0.7);
+    margin-bottom: 12px;
+  }
+  .app-info .message {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: rgba(13, 27, 42, 0.85);
+    background: var(--paper-warm);
+    padding: 12px 16px;
+    border-left: 3px solid var(--aegean);
+    margin-top: 8px;
+    font-style: italic;
+  }
+  .app-info .timestamp {
+    font-size: 0.75rem;
+    color: rgba(13, 27, 42, 0.5);
+    margin-top: 8px;
+  }
+
+  .app-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .status-badge {
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .status-badge.pending { background: rgba(212, 166, 74, 0.2); color: #8a6914; }
+  .status-badge.accepted { background: rgba(107, 122, 74, 0.2); color: var(--olive); }
+  .status-badge.rejected { background: rgba(201, 90, 60, 0.15); color: var(--terracotta); }
+  .status-badge.viewed { background: rgba(30, 77, 107, 0.15); color: var(--aegean); }
+
+  .dash-empty {
+    text-align: center;
+    padding: 60px 24px;
+    background: white;
+    border: 1px dashed var(--line);
+    color: rgba(13, 27, 42, 0.55);
+  }
+  .dash-empty .emoji { font-size: 3rem; display: block; margin-bottom: 16px; }
+  .dash-empty p { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.1rem; margin-bottom: 16px; }
+
+  .my-job-row {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 16px;
+    align-items: center;
+  }
+  .my-job-row .job-title-cell h5 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .my-job-row .job-title-cell .business { font-size: 0.85rem; color: rgba(13, 27, 42, 0.6); }
+  .my-job-row .apps-count {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    color: var(--aegean);
+    text-align: center;
+    min-width: 60px;
+  }
+  .my-job-row .apps-count .num { font-weight: 500; display: block; }
+  .my-job-row .apps-count .lbl { font-size: 0.65rem; color: rgba(13, 27, 42, 0.5); letter-spacing: 0.1em; text-transform: uppercase; font-family: 'Manrope', sans-serif; }
+  .my-job-row .job-status {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .my-job-row .job-status.active { background: rgba(107, 122, 74, 0.15); color: var(--olive); }
+  .my-job-row .job-status.closed { background: rgba(13, 27, 42, 0.1); color: rgba(13, 27, 42, 0.6); }
+
+  @media (max-width: 900px) {
+    .dashboard-grid { grid-template-columns: 1fr 1fr; }
+    .application-card { grid-template-columns: 1fr; }
+    .app-actions { flex-direction: row; align-items: center; flex-wrap: wrap; }
+    .my-job-row { grid-template-columns: 1fr auto; gap: 12px; }
+    .my-job-row .apps-count, .my-job-row .job-status { grid-column: 1 / -1; justify-self: start; }
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 20px; }
+    .nav-user .greeting { display: none; }
+    .hero { padding: 60px 24px 40px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .stats { grid-template-columns: repeat(2, 1fr); padding: 0 24px; }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
+    section { padding: 50px 24px; }
+    .section-head { flex-direction: column; align-items: start; gap: 12px; }
+    h2 { font-size: 2rem; }
+    .form-card { padding: 28px; }
+    .form-grid { grid-template-columns: 1fr; }
+    footer { padding: 40px 24px; }
+    .toast { top: 80px; right: 16px; left: 16px; max-width: none; }
+    .modal { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<div class="wrap">
+
+<nav>
+  <div class="brand" data-go="home">
+    <span class="dot"></span>
+    Μεράκι
+    <small>Σεζόν '26</small>
+  </div>
+  <div class="nav-tabs" id="nav-tabs">
+    <!-- populated by JS -->
+  </div>
+  <div class="nav-user" id="nav-user">
+    <!-- populated by JS -->
+  </div>
+</nav>
+
+<!-- HOME -->
+<div class="panel active" id="panel-home">
+  <div class="deco-sun"></div>
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-label"><span class="live-badge">Live</span> · Καλοκαίρι 2026</div>
+        <h1>
+          Το <em>καλοκαίρι</em><br>
+          σου <span class="underline">ξεκινά</span><br>
+          εδώ.
+        </h1>
+      </div>
+      <div class="hero-side">
+        <p>
+          Συνδέουμε ξενοδοχεία, εστιατόρια, beach bars και επιχειρήσεις
+          με ταλαντούχους εργαζόμενους που αναζητούν τη σεζόν τους.
+          Χωρίς μεσάζοντες. Με μεράκι.
+        </p>
+        <div class="cta-row" id="hero-cta">
+          <!-- populated by JS based on auth status -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num" id="stat-jobs">—</div><div class="stat-label">Ανοιχτές Θέσεις</div></div>
+    <div class="stat"><div class="stat-num" id="stat-candidates">—</div><div class="stat-label">Υποψήφιοι</div></div>
+    <div class="stat"><div class="stat-num" id="stat-applications">—</div><div class="stat-label">Αιτήσεις</div></div>
+    <div class="stat"><div class="stat-num">0€</div><div class="stat-label">Έξοδα Εγγραφής</div></div>
+  </div>
+
+  <section>
+    <div class="section-head">
+      <h2>Πρόσφατες αγγελίες</h2>
+      <div class="section-meta">Top 6 · Live</div>
+    </div>
+    <div class="listings" id="home-jobs">
+      <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Διαθέσιμοι υποψήφιοι</h2>
+      <div class="section-meta">Πρόσφατες εγγραφές</div>
+    </div>
+    <div class="listings" id="home-candidates">
+      <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+    </div>
+  </section>
+</div>
+
+<!-- LOGIN -->
+<div class="panel" id="panel-login">
+  <div class="auth-section">
+    <div class="form-card">
+      <h3>Καλώς ήρθες πίσω</h3>
+      <div class="sub">Συνδέσου για να διαχειριστείς το προφίλ ή τις αγγελίες σου.</div>
+      <div class="form-grid">
+        <div class="full">
+          <label>Email</label>
+          <input type="email" id="login-email" placeholder="email@example.com">
+        </div>
+        <div class="full">
+          <label>Κωδικός</label>
+          <input type="password" id="login-password" placeholder="••••••••">
+        </div>
+        <div class="full" style="margin-top: 8px;">
+          <button class="btn btn-primary" id="submit-login" style="width: 100%; justify-content: center;">Σύνδεση →</button>
+        </div>
+      </div>
+      <div class="auth-toggle">
+        Δεν έχεις λογαριασμό; <a data-go="signup">Εγγράψου εδώ</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNUP -->
+<div class="panel" id="panel-signup">
+  <div class="auth-section">
+    <div class="form-card">
+      <h3>Δημιουργία λογαριασμού</h3>
+      <div class="sub">Φτιάξε λογαριασμό για να ποστάρεις αγγελίες ή να εγγραφείς ως υποψήφιος.</div>
+      <div class="form-grid">
+        <div class="full">
+          <label>Είμαι...</label>
+          <div class="role-selector">
+            <div class="role-card active" data-role="worker">
+              <span class="emoji">👤</span>
+              <div class="title">Εργαζόμενος</div>
+              <div class="desc">Ψάχνω σεζονιακή δουλειά</div>
+            </div>
+            <div class="role-card" data-role="employer">
+              <span class="emoji">🏢</span>
+              <div class="title">Εργοδότης</div>
+              <div class="desc">Έχω επιχείρηση και ψάχνω προσωπικό</div>
+            </div>
+          </div>
+        </div>
+        <div class="full">
+          <label>Ονοματεπώνυμο</label>
+          <input type="text" id="signup-name" placeholder="π.χ. Μαρία Παπαδοπούλου">
+        </div>
+        <div class="full">
+          <label>Email</label>
+          <input type="email" id="signup-email" placeholder="email@example.com">
+        </div>
+        <div class="full">
+          <label>Κωδικός (τουλάχιστον 6 χαρακτήρες)</label>
+          <input type="password" id="signup-password" placeholder="••••••••">
+        </div>
+        <div class="full" style="margin-top: 8px;">
+          <button class="btn btn-primary" id="submit-signup" style="width: 100%; justify-content: center;">Δημιουργία λογαριασμού →</button>
+        </div>
+      </div>
+      <div class="auth-toggle">
+        Έχεις ήδη λογαριασμό; <a data-go="login">Σύνδεση</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JOBS -->
+<div class="panel" id="panel-jobs">
+  <section>
+    <div class="section-head">
+      <h2>Όλες οι αγγελίες</h2>
+      <div class="section-meta"><span class="live-badge">Live</span></div>
+    </div>
+    <div class="filters">
+      <label style="margin-right: 8px;">Φίλτρα:</label>
+      <select id="filter-jobs-category">
+        <option value="">Όλοι οι κλάδοι</option>
+        <option>Εστίαση</option><option>Ξενοδοχείο</option><option>Beach Bar / Παραλία</option>
+        <option>Λιανική / Καταστήματα</option><option>Animation / Ψυχαγωγία</option><option>Άλλο</option>
+      </select>
+      <input type="text" id="filter-jobs-search" placeholder="Αναζήτηση...">
+      <button class="btn btn-secondary btn-small" id="clear-job-filters" style="margin-left: auto;">Καθαρισμός</button>
+    </div>
+    <div class="listings" id="all-jobs"></div>
+  </section>
+</div>
+
+<!-- CANDIDATES -->
+<div class="panel" id="panel-candidates">
+  <section>
+    <div class="section-head">
+      <h2>Όλοι οι υποψήφιοι</h2>
+      <div class="section-meta"><span class="live-badge">Live</span></div>
+    </div>
+    <div class="filters">
+      <label style="margin-right: 8px;">Φίλτρα:</label>
+      <select id="filter-cand-role">
+        <option value="">Όλοι οι ρόλοι</option>
+        <option>Σερβιτόρος/α</option><option>Bartender</option><option>Μάγειρας</option>
+        <option>Βοηθός Κουζίνας</option><option>Receptionist</option><option>Καμαριέρα</option>
+        <option>Πωλητής/τρια</option><option>Animator</option><option>DJ</option><option>Άλλο</option>
+      </select>
+      <input type="text" id="filter-cand-search" placeholder="Αναζήτηση...">
+      <button class="btn btn-secondary btn-small" id="clear-cand-filters" style="margin-left: auto;">Καθαρισμός</button>
+    </div>
+    <div class="listings" id="all-candidates"></div>
+  </section>
+</div>
+
+<!-- FAVORITES -->
+<div class="panel" id="panel-favorites">
+  <section>
+    <div class="section-head">
+      <h2>❤ Οι αγαπημένες μου αγγελίες</h2>
+      <div class="section-meta" id="fav-count">—</div>
+    </div>
+    <div class="listings" id="all-favorites"></div>
+  </section>
+</div>
+
+<!-- MESSAGES -->
+<div class="panel" id="panel-messages">
+  <section>
+    <div class="section-head">
+      <h2>💬 Μηνύματα</h2>
+      <div class="section-meta" id="messages-subtitle">Συνομιλίες</div>
+    </div>
+    <div id="messages-content">
+      <div class="messages-container" id="messages-container">
+        <div class="conv-list">
+          <div class="conv-list-header">Συνομιλίες</div>
+          <div id="conv-list-items"></div>
+        </div>
+        <div class="chat-area" id="chat-area">
+          <div class="chat-empty">
+            <span class="icon">💬</span>
+            <h4>Επίλεξε μια συνομιλία</h4>
+            <p>Διάλεξε από τη λίστα αριστερά για να δεις και να στείλεις μηνύματα</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- POST/EDIT JOB -->
+<div class="panel" id="panel-post-job">
+  <section>
+    <div class="section-head">
+      <h2 id="job-form-title">Δημιουργία αγγελίας</h2>
+      <div class="section-meta">Για επιχειρήσεις</div>
+    </div>
+    <div id="job-auth-warning" class="info-banner" style="display: none;">
+      ⚠️ Πρέπει να είσαι συνδεδεμένος ως εργοδότης για να δημοσιεύσεις αγγελία. <a data-go="login" style="color: var(--aegean); font-weight: 600;">Σύνδεση</a> ή <a data-go="signup" style="color: var(--aegean); font-weight: 600;">Εγγραφή</a>.
+    </div>
+    <div class="form-card" id="job-form-card">
+      <h3>Πες μας τι ψάχνεις</h3>
+      <div class="sub">Συμπληρώστε τα στοιχεία της θέσης. Όσο πιο αναλυτικά, τόσο καλύτερα ταιριάσματα.</div>
+      <div class="form-grid">
+        <div class="full"><label>Επωνυμία επιχείρησης *</label><input type="text" id="j-business"></div>
+        <div class="full">
+          <label>Logo επιχείρησης (προαιρετικό)</label>
+          <div class="upload-zone" id="j-logo-zone">
+            <span class="icon">🏢</span>
+            <div class="text">Κάνε κλικ ή σύρε εικόνα εδώ</div>
+            <div class="hint">PNG, JPG, WebP · έως 5MB</div>
+            <input type="file" id="j-logo-file" accept="image/png,image/jpeg,image/webp,image/gif">
+          </div>
+          <div class="upload-preview" id="j-logo-preview" style="display:none;">
+            <img id="j-logo-preview-img" src="">
+            <div class="file-info">
+              <div class="file-name" id="j-logo-preview-name">—</div>
+              <div class="file-size" id="j-logo-preview-size">—</div>
+            </div>
+            <button type="button" id="j-logo-remove">Αφαίρεση</button>
+          </div>
+          <div class="upload-progress" id="j-logo-progress"><div class="bar"></div></div>
+        </div>
+        <div><label>Κλάδος</label>
+          <select id="j-category">
+            <option>Εστίαση</option><option>Ξενοδοχείο</option><option>Beach Bar / Παραλία</option>
+            <option>Λιανική / Καταστήματα</option><option>Animation / Ψυχαγωγία</option><option>Άλλο</option>
+          </select>
+        </div>
+        <div><label>Τοποθεσία *</label><input type="text" id="j-location" placeholder="π.χ. Πάρος, Νάουσα"></div>
+        <div class="full"><label>Τίτλος θέσης *</label><input type="text" id="j-title"></div>
+        <div><label>Περίοδος εργασίας</label><input type="text" id="j-period" placeholder="π.χ. Μάιος – Σεπτέμβριος"></div>
+        <div><label>Αμοιβή</label><input type="text" id="j-salary" placeholder="π.χ. 1.300€ + bonus"></div>
+        <div class="full">
+          <label>Παροχές</label>
+          <div class="chip-group" id="j-perks">
+            <span class="chip" data-val="Διαμονή">🏠 Διαμονή</span>
+            <span class="chip" data-val="Διατροφή">🍽 Διατροφή</span>
+            <span class="chip" data-val="Bonus">💰 Bonus</span>
+            <span class="chip" data-val="Tips">💵 Tips</span>
+            <span class="chip" data-val="Εκπαίδευση">📚 Εκπαίδευση</span>
+            <span class="chip" data-val="Ασφάλιση">🛡 Ασφάλιση</span>
+          </div>
+        </div>
+        <div class="full">
+          <label>Ζητούμενες δεξιότητες</label>
+          <div class="chip-group" id="j-skills">
+            <span class="chip" data-val="Αγγλικά">Αγγλικά</span>
+            <span class="chip" data-val="Γερμανικά">Γερμανικά</span>
+            <span class="chip" data-val="Γαλλικά">Γαλλικά</span>
+            <span class="chip" data-val="Ιταλικά">Ιταλικά</span>
+            <span class="chip" data-val="Ρώσικα">Ρώσικα</span>
+            <span class="chip" data-val="Προηγούμενη εμπειρία">Προηγούμενη εμπειρία</span>
+            <span class="chip" data-val="POS / Ταμείο">POS / Ταμείο</span>
+            <span class="chip" data-val="Δίπλωμα οδήγησης">Δίπλωμα οδήγησης</span>
+            <span class="chip" data-val="Ομαδικότητα">Ομαδικότητα</span>
+            <span class="chip" data-val="Ευελιξία ωραρίου">Ευελιξία ωραρίου</span>
+          </div>
+        </div>
+        <div class="full"><label>Περιγραφή θέσης *</label><textarea id="j-description"></textarea></div>
+        <div><label>Email επικοινωνίας *</label><input type="email" id="j-email"></div>
+        <div><label>Τηλέφωνο</label><input type="tel" id="j-phone"></div>
+        <div class="full" style="margin-top: 16px;">
+          <button class="btn btn-primary" id="submit-job">Δημοσίευση αγγελίας →</button>
+          <button class="btn btn-secondary" id="cancel-job-edit" style="display:none; margin-left: 8px;">Ακύρωση</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- POST/EDIT CANDIDATE -->
+<div class="panel" id="panel-post-candidate">
+  <section>
+    <div class="section-head">
+      <h2 id="cand-form-title">Εγγραφή ως υποψήφιος</h2>
+      <div class="section-meta">Δωρεάν · Χωρίς δεσμεύσεις</div>
+    </div>
+    <div id="cand-auth-warning" class="info-banner" style="display: none;">
+      ⚠️ Πρέπει να είσαι συνδεδεμένος ως εργαζόμενος. <a data-go="login" style="color: var(--aegean); font-weight: 600;">Σύνδεση</a> ή <a data-go="signup" style="color: var(--aegean); font-weight: 600;">Εγγραφή</a>.
+    </div>
+    <div class="form-card" id="cand-form-card">
+      <h3>Φτιάξε το προφίλ σου</h3>
+      <div class="sub">Δείξε στους εργοδότες ποιος είσαι. Ειλικρινά. Σύντομα. Με στυλ.</div>
+      <div class="form-grid">
+        <div class="full">
+          <label>Φωτογραφία προφίλ (προαιρετικό)</label>
+          <div class="upload-zone" id="c-avatar-zone">
+            <span class="icon">📷</span>
+            <div class="text">Κάνε κλικ ή σύρε εικόνα εδώ</div>
+            <div class="hint">PNG, JPG, WebP · έως 5MB · Τετράγωνη φωτογραφία ιδανικά</div>
+            <input type="file" id="c-avatar-file" accept="image/png,image/jpeg,image/webp,image/gif">
+          </div>
+          <div class="upload-preview" id="c-avatar-preview" style="display:none;">
+            <img id="c-avatar-preview-img" src="">
+            <div class="file-info">
+              <div class="file-name" id="c-avatar-preview-name">—</div>
+              <div class="file-size" id="c-avatar-preview-size">—</div>
+            </div>
+            <button type="button" id="c-avatar-remove">Αφαίρεση</button>
+          </div>
+          <div class="upload-progress" id="c-avatar-progress"><div class="bar"></div></div>
+        </div>
+        <div class="full">
+          <label>Βιογραφικό σε PDF (προαιρετικό)</label>
+          <div class="upload-zone" id="c-cv-zone">
+            <span class="icon">📄</span>
+            <div class="text">Κάνε κλικ ή σύρε αρχείο PDF εδώ</div>
+            <div class="hint">PDF · έως 10MB · Οι εργοδότες θα μπορούν να το κατεβάζουν</div>
+            <input type="file" id="c-cv-file" accept="application/pdf">
+          </div>
+          <div class="upload-preview" id="c-cv-preview" style="display:none;">
+            <span style="font-size: 2rem;">📄</span>
+            <div class="file-info">
+              <div class="file-name" id="c-cv-preview-name">—</div>
+              <div class="file-size" id="c-cv-preview-size">—</div>
+            </div>
+            <button type="button" id="c-cv-remove">Αφαίρεση</button>
+          </div>
+          <div class="upload-progress" id="c-cv-progress"><div class="bar"></div></div>
+        </div>
+        <div><label>Ονοματεπώνυμο *</label><input type="text" id="c-name"></div>
+        <div><label>Ηλικία *</label><input type="number" id="c-age" min="16" max="80"></div>
+        <div><label>Πόλη διαμονής *</label><input type="text" id="c-city"></div>
+        <div><label>Επιθυμητός ρόλος</label>
+          <select id="c-role">
+            <option>Σερβιτόρος/α</option><option>Bartender</option><option>Μάγειρας</option>
+            <option>Βοηθός Κουζίνας</option><option>Receptionist</option><option>Καμαριέρα</option>
+            <option>Πωλητής/τρια</option><option>Animator</option><option>DJ</option><option>Άλλο</option>
+          </select>
+        </div>
+        <div><label>Έτη εμπειρίας</label>
+          <select id="c-experience">
+            <option>Καμία (πρώτη σεζόν)</option><option>1 σεζόν</option><option>2-3 σεζόν</option>
+            <option>4-6 σεζόν</option><option>7+ σεζόν</option>
+          </select>
+        </div>
+        <div><label>Διαθεσιμότητα</label><input type="text" id="c-availability" placeholder="π.χ. 1/5 – 30/9"></div>
+        <div class="full"><label>Προτιμώμενοι προορισμοί</label><input type="text" id="c-locations" placeholder="π.χ. Κυκλάδες, Κρήτη"></div>
+        <div class="full">
+          <label>Γλώσσες & Δεξιότητες</label>
+          <div class="chip-group" id="c-skills">
+            <span class="chip" data-val="Αγγλικά">Αγγλικά</span>
+            <span class="chip" data-val="Γερμανικά">Γερμανικά</span>
+            <span class="chip" data-val="Γαλλικά">Γαλλικά</span>
+            <span class="chip" data-val="Ιταλικά">Ιταλικά</span>
+            <span class="chip" data-val="Ρώσικα">Ρώσικα</span>
+            <span class="chip" data-val="Δίπλωμα οδήγησης">Δίπλωμα οδήγησης</span>
+            <span class="chip" data-val="Δίπλωμα μηχανής">Δίπλωμα μηχανής</span>
+            <span class="chip" data-val="POS / Ταμείο">POS / Ταμείο</span>
+            <span class="chip" data-val="Latte art">Latte art</span>
+            <span class="chip" data-val="Cocktails">Cocktails</span>
+            <span class="chip" data-val="HACCP">HACCP</span>
+            <span class="chip" data-val="Πτυχίο τουριστικών">Πτυχίο τουριστικών</span>
+          </div>
+        </div>
+        <div class="full">
+          <label>Ζητούμενες παροχές</label>
+          <div class="chip-group" id="c-perks-need">
+            <span class="chip" data-val="Διαμονή">🏠 Διαμονή</span>
+            <span class="chip" data-val="Διατροφή">🍽 Διατροφή</span>
+            <span class="chip" data-val="Ασφάλιση">🛡 Ασφάλιση</span>
+          </div>
+        </div>
+        <div class="full"><label>Λίγα λόγια για σένα *</label><textarea id="c-bio"></textarea></div>
+        <div><label>Email *</label><input type="email" id="c-email"></div>
+        <div><label>Τηλέφωνο</label><input type="tel" id="c-phone"></div>
+        <div class="full" style="margin-top: 16px;">
+          <button class="btn btn-primary" id="submit-candidate">Δημοσίευση προφίλ →</button>
+          <button class="btn btn-secondary" id="cancel-cand-edit" style="display:none; margin-left: 8px;">Ακύρωση</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- DASHBOARD -->
+<div class="panel" id="panel-dashboard">
+  <section>
+    <div class="section-head">
+      <h2 id="dashboard-title">Το dashboard μου</h2>
+      <div class="section-meta" id="dashboard-subtitle">Προσωπικός χώρος</div>
+    </div>
+
+    <!-- Stats grid -->
+    <div class="dashboard-grid" id="dash-stats">
+      <!-- populated by JS -->
+    </div>
+
+    <!-- Employer: My jobs section -->
+    <div class="dash-section" id="dash-my-jobs-section" style="display:none;">
+      <div class="dash-section-title">
+        <span>📋 Οι αγγελίες μου</span>
+        <button class="btn btn-terracotta btn-small" data-go="post-job">+ Νέα αγγελία</button>
+      </div>
+      <div id="dash-my-jobs"></div>
+    </div>
+
+    <!-- Employer: Applications received -->
+    <div class="dash-section" id="dash-received-apps-section" style="display:none;">
+      <div class="dash-section-title">
+        <span>📨 Αιτήσεις που έλαβα</span>
+        <span class="count" id="dash-received-count">—</span>
+      </div>
+      <div class="filters" style="margin-bottom: 16px;">
+        <label style="margin-right:8px;">Φιλτράρισμα:</label>
+        <select id="filter-app-status">
+          <option value="">Όλες</option>
+          <option value="pending">Σε αναμονή</option>
+          <option value="accepted">Αποδεκτές</option>
+          <option value="rejected">Απορρίφθηκαν</option>
+        </select>
+        <select id="filter-app-job">
+          <option value="">Όλες οι αγγελίες</option>
+        </select>
+      </div>
+      <div id="dash-received-apps"></div>
+    </div>
+
+    <!-- Worker: My profile shortcut -->
+    <div class="dash-section" id="dash-my-profile-section" style="display:none;">
+      <div class="dash-section-title">
+        <span>👤 Το προφίλ μου</span>
+        <button class="btn btn-secondary btn-small" data-go="post-candidate">✎ Επεξεργασία</button>
+      </div>
+      <div id="dash-my-profile"></div>
+    </div>
+
+    <!-- Worker: My applications -->
+    <div class="dash-section" id="dash-my-apps-section" style="display:none;">
+      <div class="dash-section-title">
+        <span>📤 Οι αιτήσεις μου</span>
+        <span class="count" id="dash-my-apps-count">—</span>
+      </div>
+      <div id="dash-my-apps"></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="quote">«Η σεζόν είναι μικρή. Οι αναμνήσεις, μεγάλες.»</div>
+  <div class="small">Μεράκι · Σεζόν 2026 · Powered by Supabase</div>
+</footer>
+
+</div>
+
+<!-- Apply Modal -->
+<div class="modal-bg" id="apply-modal">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">×</button>
+    <h3>Αίτηση για θέση</h3>
+    <div class="modal-sub" id="apply-job-title"></div>
+    <div class="form-grid">
+      <div class="full"><label>Ονοματεπώνυμο *</label><input type="text" id="apply-name"></div>
+      <div><label>Email *</label><input type="email" id="apply-email"></div>
+      <div><label>Τηλέφωνο</label><input type="tel" id="apply-phone"></div>
+      <div class="full"><label>Μήνυμα στον εργοδότη</label><textarea id="apply-message"></textarea></div>
+      <div class="full" style="margin-top: 8px;">
+        <button class="btn btn-primary" id="submit-apply">Υποβολή αίτησης →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Delete Modal -->
+<div class="modal-bg" id="confirm-modal">
+  <div class="modal" style="max-width: 480px;">
+    <h3 id="confirm-title">Επιβεβαίωση</h3>
+    <div class="modal-sub" id="confirm-message"></div>
+    <div style="display: flex; gap: 12px; margin-top: 24px;">
+      <button class="btn btn-secondary" id="confirm-cancel" style="flex:1;">Ακύρωση</button>
+      <button class="btn btn-danger" id="confirm-yes" style="flex:1;">Διαγραφή</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // ===== SUPABASE CONFIG =====
+  const SUPABASE_URL = 'https://fdfazerlqanrnoeuliag.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_lRJt7kT1jL7GpwUS0Q_jOg_7VPV-pl9';
+  const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  // ===== STATE =====
+  let jobs = [];
+  let candidates = [];
+  let favorites = [];        // array of job_ids that current user has favorited
+  let conversations = [];    // user's conversations
+  let currentConversationId = null;
+  let currentMessages = [];
+  let unreadMessagesCount = 0;
+  let userProfilesCache = {}; // cache: user_id -> { full_name, account_type, avatar_url }
+  let currentUser = null;     // auth user
+  let currentProfile = null;  // profiles row
+  let currentApplyJobId = null;
+  let editingJobId = null;
+  let editingCandId = null;
+  let signupRole = 'worker';
+  let confirmCallback = null;
+
+  // ===== TOAST =====
+  function toast(message, type = 'success') {
+    const t = document.getElementById('toast');
+    t.textContent = message;
+    t.className = 'toast show' + (type === 'error' ? ' error' : '');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  function escapeHtml(s) {
+    if (s === null || s === undefined) return '';
+    return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  }
+
+  // ===== AUTH =====
+  async function checkAuth() {
+    const { data: { user } } = await db.auth.getUser();
+    if (user) {
+      currentUser = user;
+      const { data: profile } = await db.from('profiles').select('*').eq('id', user.id).maybeSingle();
+      currentProfile = profile;
+      await loadFavorites();
+      await loadConversations();
+      await loadUnreadCount();
+    } else {
+      currentUser = null;
+      currentProfile = null;
+      favorites = [];
+      conversations = [];
+      unreadMessagesCount = 0;
+    }
+    renderNav();
+    renderHeroCTA();
+  }
+
+  function renderNav() {
+    const tabs = document.getElementById('nav-tabs');
+    const userArea = document.getElementById('nav-user');
+
+    let tabsHtml = `
+      <button class="tab-btn active" data-panel="home">Αρχική</button>
+      <button class="tab-btn" data-panel="jobs">Αγγελίες</button>
+      <button class="tab-btn" data-panel="candidates">Υποψήφιοι</button>
+    `;
+
+    if (currentUser && currentProfile) {
+      const unreadStr = unreadMessagesCount > 0 ? `<span class="nav-badge">${unreadMessagesCount}</span>` : '';
+      tabsHtml += `<button class="tab-btn" data-panel="dashboard">📊 Dashboard</button>`;
+      tabsHtml += `<button class="tab-btn" data-panel="messages">💬 Μηνύματα${unreadStr}</button>`;
+      if (currentProfile.account_type === 'employer') {
+        tabsHtml += `<button class="tab-btn" data-panel="post-job">+ Νέα αγγελία</button>`;
+      } else {
+        tabsHtml += `<button class="tab-btn" data-panel="favorites">❤ Favorites</button>`;
+        tabsHtml += `<button class="tab-btn" data-panel="post-candidate">Το προφίλ μου</button>`;
+      }
+    }
+
+    tabs.innerHTML = tabsHtml;
+    tabs.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => showPanel(b.dataset.panel)));
+
+    if (currentUser && currentProfile) {
+      const name = currentProfile.full_name || currentUser.email.split('@')[0];
+      const typeLabel = currentProfile.account_type === 'employer' ? 'Εργοδότης' : 'Εργαζόμενος';
+      const badgeClass = currentProfile.account_type === 'employer' ? 'badge employer' : 'badge';
+      userArea.innerHTML = `
+        <span class="greeting">Γεια σου, ${escapeHtml(name)}</span>
+        <span class="${badgeClass}">${typeLabel}</span>
+        <button class="btn btn-secondary btn-small" id="logout-btn">Αποσύνδεση</button>
+      `;
+      document.getElementById('logout-btn').addEventListener('click', logout);
+    } else {
+      userArea.innerHTML = `
+        <button class="btn btn-secondary btn-small" data-go="login">Σύνδεση</button>
+        <button class="btn btn-primary btn-small" data-go="signup">Εγγραφή</button>
+      `;
+      userArea.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => showPanel(b.dataset.go)));
+    }
+  }
+
+  function renderHeroCTA() {
+    const cta = document.getElementById('hero-cta');
+    if (currentUser && currentProfile) {
+      if (currentProfile.account_type === 'employer') {
+        cta.innerHTML = `
+          <button class="btn btn-terracotta" data-go="post-job">+ Νέα αγγελία →</button>
+          <button class="btn btn-secondary" data-go="jobs">Δες αγγελίες</button>
+        `;
+      } else {
+        cta.innerHTML = `
+          <button class="btn btn-primary" data-go="post-candidate">Το προφίλ μου →</button>
+          <button class="btn btn-secondary" data-go="jobs">Δες αγγελίες</button>
+        `;
+      }
+    } else {
+      cta.innerHTML = `
+        <button class="btn btn-primary" data-go="signup">Δημιουργία λογαριασμού →</button>
+        <button class="btn btn-secondary" data-go="login">Σύνδεση</button>
+      `;
+    }
+    cta.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => showPanel(b.dataset.go)));
+  }
+
+  async function logout() {
+    await db.auth.signOut();
+    currentUser = null;
+    currentProfile = null;
+    renderNav();
+    renderHeroCTA();
+    toast('Αποσυνδέθηκες επιτυχώς');
+    showPanel('home');
+  }
+
+  // ===== SIGNUP =====
+  document.querySelectorAll('.role-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.role-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      signupRole = card.dataset.role;
+    });
+  });
+
+  document.getElementById('submit-signup').addEventListener('click', async () => {
+    const btn = document.getElementById('submit-signup');
+    const name = document.getElementById('signup-name').value.trim();
+    const email = document.getElementById('signup-email').value.trim();
+    const password = document.getElementById('signup-password').value;
+
+    if (!name || !email || !password) { toast('Συμπλήρωσε όλα τα πεδία', 'error'); return; }
+    if (password.length < 6) { toast('Ο κωδικός θέλει τουλάχιστον 6 χαρακτήρες', 'error'); return; }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="loader"></span> Εγγραφή...';
+
+    const { data, error } = await db.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { full_name: name, account_type: signupRole }
+      }
+    });
+
+    btn.disabled = false;
+    btn.innerHTML = 'Δημιουργία λογαριασμού →';
+
+    if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+
+    if (data.user) {
+      toast('✓ Ο λογαριασμός δημιουργήθηκε! Καλώς ήρθες, ' + name);
+      ['signup-name','signup-email','signup-password'].forEach(id => document.getElementById(id).value = '');
+      // Wait briefly for trigger to create profile
+      await new Promise(r => setTimeout(r, 500));
+      await checkAuth();
+      setTimeout(() => showPanel('home'), 600);
+    }
+  });
+
+  // ===== LOGIN =====
+  document.getElementById('submit-login').addEventListener('click', async () => {
+    const btn = document.getElementById('submit-login');
+    const email = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+
+    if (!email || !password) { toast('Συμπλήρωσε email και κωδικό', 'error'); return; }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="loader"></span> Σύνδεση...';
+
+    const { error } = await db.auth.signInWithPassword({ email, password });
+
+    btn.disabled = false;
+    btn.innerHTML = 'Σύνδεση →';
+
+    if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+
+    document.getElementById('login-email').value = '';
+    document.getElementById('login-password').value = '';
+    await checkAuth();
+    toast('✓ Συνδέθηκες επιτυχώς');
+    setTimeout(() => showPanel('home'), 400);
+  });
+
+  // ===== LOAD DATA =====
+  async function loadJobs() {
+    const { data, error } = await db.from('jobs').select('*').eq('status', 'active').order('created_at', { ascending: false });
+    if (error) { console.error(error); return; }
+    jobs = data || [];
+  }
+  async function loadCandidates() {
+    const { data, error } = await db.from('candidates').select('*').order('created_at', { ascending: false });
+    if (error) { console.error(error); return; }
+    candidates = data || [];
+  }
+  async function getApplicationsCount() {
+    const { count } = await db.from('applications').select('*', { count: 'exact', head: true });
+    return count || 0;
+  }
+
+  // ===== RENDER CARDS =====
+  function jobCard(j) {
+    const isMine = currentUser && j.user_id === currentUser.id;
+    const skills = Array.isArray(j.skills) ? j.skills : [];
+    const canApply = currentUser && currentProfile && currentProfile.account_type === 'worker' && !isMine;
+    const canFav = currentUser && currentProfile && currentProfile.account_type === 'worker' && !isMine;
+    const isFav = canFav && favorites.includes(j.id);
+
+    const logoHtml = j.logo_url 
+      ? `<img class="job-logo" src="${escapeHtml(j.logo_url)}" alt="${escapeHtml(j.business)}">`
+      : `<div class="job-logo job-logo-placeholder">${escapeHtml(j.business.charAt(0))}</div>`;
+
+    const favBtnHtml = canFav ? `
+      <button class="fav-btn ${isFav ? 'saved' : ''}" data-fav-job-id="${j.id}" title="${isFav ? 'Αφαίρεση από αγαπημένα' : 'Αποθήκευση στα αγαπημένα'}">
+        <span class="heart-icon">${isFav ? '❤' : '♡'}</span>
+      </button>
+    ` : '';
+
+    return `
+      <article class="card" data-id="${j.id}">
+        ${favBtnHtml}
+        <div class="card-tag aegean">${escapeHtml(j.category)}</div>
+        ${isMine ? '<div class="card-mine-badge">✓ Δικιά μου</div>' : ''}
+        <div class="card-with-avatar">
+          ${logoHtml}
+          <div class="info">
+            <h4>${escapeHtml(j.title)}</h4>
+            <div class="meta">
+              <span>📍 ${escapeHtml(j.location)}</span>
+              <span>🏢 ${escapeHtml(j.business)}</span>
+              ${j.period ? `<span>📅 ${escapeHtml(j.period)}</span>` : ''}
+            </div>
+          </div>
+        </div>
+        <div class="desc">${escapeHtml(j.description.length > 140 ? j.description.slice(0,140) + '…' : j.description)}</div>
+        ${skills.length ? `<div class="skills">${skills.map(s => `<span class="skill-tag">${escapeHtml(s)}</span>`).join('')}</div>` : ''}
+        <div class="footer">
+          ${j.salary ? `<span class="pay">${escapeHtml(j.salary)}</span>` : '<span></span>'}
+          <span>📧 ${escapeHtml(j.email)}</span>
+        </div>
+        ${isMine ? `
+          <div class="actions">
+            <button class="btn btn-secondary btn-small edit-job-btn" data-job-id="${j.id}">✎ Επεξεργασία</button>
+            <button class="btn btn-danger btn-small delete-job-btn" data-job-id="${j.id}" data-job-title="${escapeHtml(j.title)}">🗑 Διαγραφή</button>
+          </div>
+        ` : canApply ? `
+          <div class="actions">
+            <button class="btn btn-terracotta btn-small apply-btn" data-job-id="${j.id}" data-job-title="${escapeHtml(j.title)} · ${escapeHtml(j.business)}">Κάνε αίτηση →</button>
+            ${j.user_id ? `<button class="btn btn-secondary btn-small contact-btn" data-other-user-id="${j.user_id}" data-other-name="${escapeHtml(j.business)}">💬</button>` : ''}
+          </div>
+        ` : !currentUser ? `
+          <div class="actions">
+            <button class="btn btn-secondary btn-small" data-go="login">Σύνδεση για αίτηση</button>
+          </div>
+        ` : ''}
+      </article>
+    `;
+  }
+
+  function candidateCard(c) {
+    const isMine = currentUser && c.user_id === currentUser.id;
+    const skills = Array.isArray(c.skills) ? c.skills : [];
+    const canContact = currentUser && currentProfile && currentProfile.account_type === 'employer' && !isMine && c.user_id;
+
+    const avatarHtml = c.avatar_url
+      ? `<img class="avatar" src="${escapeHtml(c.avatar_url)}" alt="${escapeHtml(c.name)}">`
+      : `<div class="avatar avatar-placeholder">${escapeHtml((c.name || '?').charAt(0))}</div>`;
+
+    return `
+      <article class="card" data-id="${c.id}">
+        <div class="card-tag olive">${escapeHtml(c.role)}</div>
+        ${isMine ? '<div class="card-mine-badge">✓ Δικό μου</div>' : ''}
+        <div class="card-with-avatar">
+          ${avatarHtml}
+          <div class="info">
+            <h4>${escapeHtml(c.name)}, ${c.age}</h4>
+            <div class="meta">
+              <span>📍 ${escapeHtml(c.city)}</span>
+              <span>⭐ ${escapeHtml(c.experience || '—')}</span>
+            </div>
+          </div>
+        </div>
+        ${c.availability ? `<div class="meta"><span>📅 ${escapeHtml(c.availability)}</span></div>` : ''}
+        <div class="desc">${escapeHtml(c.bio.length > 140 ? c.bio.slice(0,140) + '…' : c.bio)}</div>
+        ${skills.length ? `<div class="skills">${skills.map(s => `<span class="skill-tag">${escapeHtml(s)}</span>`).join('')}</div>` : ''}
+        <div class="footer">
+          <span style="color: var(--aegean); font-weight: 600;">→ ${escapeHtml(c.locations || 'Όλη η Ελλάδα')}</span>
+          ${c.cv_url ? `<a href="${escapeHtml(c.cv_url)}" target="_blank" class="cv-badge">📄 Βιογραφικό</a>` : '<span style="font-size: 0.75rem; color: rgba(13,27,42,0.4);">Χωρίς CV</span>'}
+        </div>
+        ${isMine ? `
+          <div class="actions">
+            <button class="btn btn-secondary btn-small edit-cand-btn" data-cand-id="${c.id}">✎ Επεξεργασία</button>
+            <button class="btn btn-danger btn-small delete-cand-btn" data-cand-id="${c.id}">🗑 Διαγραφή</button>
+          </div>
+        ` : canContact ? `
+          <div class="contact-btn-wrap">
+            <button class="btn btn-primary btn-small contact-btn" data-other-user-id="${c.user_id}" data-other-name="${escapeHtml(c.name)}">💬 Επικοινωνία</button>
+          </div>
+        ` : ''}
+      </article>
+    `;
+  }
+
+  async function renderHome() {
+    document.getElementById('stat-jobs').textContent = jobs.length;
+    document.getElementById('stat-candidates').textContent = candidates.length;
+    const apps = await getApplicationsCount();
+    document.getElementById('stat-applications').textContent = apps;
+
+    const topJobs = jobs.slice(0, 6);
+    const topCands = candidates.slice(0, 6);
+
+    document.getElementById('home-jobs').innerHTML = 
+      topJobs.length ? topJobs.map(jobCard).join('') : '<div class="empty">Καμία αγγελία ακόμη.<br><br><button class="btn btn-terracotta" data-go="' + (currentUser && currentProfile?.account_type === 'employer' ? 'post-job' : 'signup') + '">Γίνε ο πρώτος →</button></div>';
+    document.getElementById('home-candidates').innerHTML = 
+      topCands.length ? topCands.map(candidateCard).join('') : '<div class="empty">Κανένας υποψήφιος ακόμη.<br><br><button class="btn btn-primary" data-go="' + (currentUser && currentProfile?.account_type === 'worker' ? 'post-candidate' : 'signup') + '">Εγγράψου τώρα →</button></div>';
+
+    document.querySelectorAll('[data-go]').forEach(b => {
+      b.addEventListener('click', () => showPanel(b.dataset.go));
+    });
+  }
+
+  function renderJobs() {
+    const cat = document.getElementById('filter-jobs-category').value;
+    const search = document.getElementById('filter-jobs-search').value.toLowerCase().trim();
+    let filtered = jobs;
+    if (cat) filtered = filtered.filter(j => j.category === cat);
+    if (search) filtered = filtered.filter(j => 
+      (j.title + j.business + j.description + j.location + (j.skills||[]).join(' ')).toLowerCase().includes(search)
+    );
+    document.getElementById('all-jobs').innerHTML = 
+      filtered.length ? filtered.map(jobCard).join('') : '<div class="empty">Δεν βρέθηκαν αγγελίες με αυτά τα κριτήρια.</div>';
+  }
+
+  function renderCandidates() {
+    const role = document.getElementById('filter-cand-role').value;
+    const search = document.getElementById('filter-cand-search').value.toLowerCase().trim();
+    let filtered = candidates;
+    if (role) filtered = filtered.filter(c => c.role === role);
+    if (search) filtered = filtered.filter(c => 
+      (c.name + c.bio + (c.skills||[]).join(' ') + (c.locations||'')).toLowerCase().includes(search)
+    );
+    document.getElementById('all-candidates').innerHTML = 
+      filtered.length ? filtered.map(candidateCard).join('') : '<div class="empty">Δεν βρέθηκαν υποψήφιοι με αυτά τα κριτήρια.</div>';
+  }
+
+  // ===== NAVIGATION =====
+  async function showPanel(name) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    const panel = document.getElementById('panel-' + name);
+    if (!panel) return;
+    panel.classList.add('active');
+    const btn = document.querySelector(`.tab-btn[data-panel="${name}"]`);
+    if (btn) btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (name === 'home') await renderHome();
+    if (name === 'jobs') renderJobs();
+    if (name === 'candidates') renderCandidates();
+    if (name === 'favorites') renderFavorites();
+    if (name === 'messages') await openMessagesPanel();
+    if (name === 'post-job') checkJobFormAccess();
+    if (name === 'post-candidate') checkCandFormAccess();
+    if (name === 'dashboard') await renderDashboard();
+  }
+
+  function checkJobFormAccess() {
+    const warning = document.getElementById('job-auth-warning');
+    const form = document.getElementById('job-form-card');
+    if (!currentUser) {
+      warning.style.display = 'block';
+      warning.innerHTML = '⚠️ Πρέπει να είσαι συνδεδεμένος ως εργοδότης για να δημοσιεύσεις αγγελία. <a data-go="login" style="color: var(--aegean); font-weight: 600; cursor: pointer;">Σύνδεση</a> ή <a data-go="signup" style="color: var(--aegean); font-weight: 600; cursor: pointer;">Εγγραφή</a>.';
+      warning.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => showPanel(a.dataset.go)));
+      form.style.display = 'none';
+    } else if (currentProfile?.account_type !== 'employer') {
+      warning.style.display = 'block';
+      warning.innerHTML = '⚠️ Είσαι συνδεδεμένος ως <strong>εργαζόμενος</strong>. Μόνο εργοδότες μπορούν να δημοσιεύουν αγγελίες.';
+      form.style.display = 'none';
+    } else {
+      warning.style.display = 'none';
+      form.style.display = 'block';
+    }
+  }
+
+  function checkCandFormAccess() {
+    const warning = document.getElementById('cand-auth-warning');
+    const form = document.getElementById('cand-form-card');
+    const titleEl = document.getElementById('cand-form-title');
+
+    if (!currentUser) {
+      warning.style.display = 'block';
+      warning.innerHTML = '⚠️ Πρέπει να είσαι συνδεδεμένος ως εργαζόμενος για να φτιάξεις προφίλ. <a data-go="login" style="color: var(--aegean); font-weight: 600; cursor: pointer;">Σύνδεση</a> ή <a data-go="signup" style="color: var(--aegean); font-weight: 600; cursor: pointer;">Εγγραφή</a>.';
+      warning.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => showPanel(a.dataset.go)));
+      form.style.display = 'none';
+    } else if (currentProfile?.account_type !== 'worker') {
+      warning.style.display = 'block';
+      warning.innerHTML = '⚠️ Είσαι συνδεδεμένος ως <strong>εργοδότης</strong>. Μόνο εργαζόμενοι μπορούν να δημιουργήσουν προφίλ υποψηφίου.';
+      form.style.display = 'none';
+    } else {
+      warning.style.display = 'none';
+      form.style.display = 'block';
+      // Auto-load existing profile if exists
+      loadMyCandidateProfile();
+    }
+  }
+
+  async function loadMyCandidateProfile() {
+    if (!currentUser) return;
+    const { data } = await db.from('candidates').select('*').eq('user_id', currentUser.id).maybeSingle();
+    if (data) {
+      // We have an existing profile — load into form for editing
+      editingCandId = data.id;
+      document.getElementById('cand-form-title').textContent = 'Επεξεργασία προφίλ';
+      document.getElementById('c-name').value = data.name || '';
+      document.getElementById('c-age').value = data.age || '';
+      document.getElementById('c-city').value = data.city || '';
+      document.getElementById('c-role').value = data.role || 'Σερβιτόρος/α';
+      document.getElementById('c-experience').value = data.experience || 'Καμία (πρώτη σεζόν)';
+      document.getElementById('c-availability').value = data.availability || '';
+      document.getElementById('c-locations').value = data.locations || '';
+      document.getElementById('c-bio').value = data.bio || '';
+      document.getElementById('c-email').value = data.email || currentUser.email;
+      document.getElementById('c-phone').value = data.phone || '';
+      clearChips('c-skills');
+      clearChips('c-perks-need');
+      (data.skills || []).forEach(s => {
+        const chip = document.querySelector(`#c-skills .chip[data-val="${s}"]`);
+        if (chip) chip.classList.add('active');
+      });
+      (data.perks_needed || []).forEach(s => {
+        const chip = document.querySelector(`#c-perks-need .chip[data-val="${s}"]`);
+        if (chip) chip.classList.add('active');
+      });
+      // Show existing avatar/CV
+      resetUploadState();
+      if (data.avatar_url) showExistingUpload('avatar', data.avatar_url);
+      if (data.cv_url) showExistingUpload('cv', data.cv_url, 'CV.pdf');
+      document.getElementById('submit-candidate').textContent = 'Αποθήκευση αλλαγών →';
+    } else {
+      editingCandId = null;
+      document.getElementById('cand-form-title').textContent = 'Εγγραφή ως υποψήφιος';
+      document.getElementById('submit-candidate').textContent = 'Δημοσίευση προφίλ →';
+      resetUploadState();
+      // Pre-fill email from auth
+      document.getElementById('c-email').value = currentUser.email;
+      document.getElementById('c-name').value = currentProfile?.full_name || '';
+    }
+  }
+
+  // Brand click to home
+  document.querySelector('.brand').addEventListener('click', () => showPanel('home'));
+
+  // ===== CHIPS =====
+  document.querySelectorAll('.chip-group').forEach(group => {
+    group.addEventListener('click', e => {
+      if (e.target.classList.contains('chip')) e.target.classList.toggle('active');
+    });
+  });
+  function getChipValues(groupId) {
+    return [...document.querySelectorAll('#' + groupId + ' .chip.active')].map(c => c.dataset.val);
+  }
+  function clearChips(groupId) {
+    document.querySelectorAll('#' + groupId + ' .chip.active').forEach(c => c.classList.remove('active'));
+  }
+
+  // ===== SUBMIT JOB (CREATE OR UPDATE) =====
+  document.getElementById('submit-job').addEventListener('click', async () => {
+    if (!currentUser) { toast('Πρέπει να είσαι συνδεδεμένος', 'error'); return; }
+
+    const btn = document.getElementById('submit-job');
+    const business = document.getElementById('j-business').value.trim();
+    const title = document.getElementById('j-title').value.trim();
+    const location = document.getElementById('j-location').value.trim();
+    const description = document.getElementById('j-description').value.trim();
+    const email = document.getElementById('j-email').value.trim();
+
+    if (!business || !title || !location || !description || !email) {
+      toast('Συμπληρώστε τα υποχρεωτικά πεδία (*)', 'error'); return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="loader"></span> Ανέβασμα & αποθήκευση...';
+
+    // Upload logo if present
+    const uploadResults = await processUploads('job');
+
+    const jobData = {
+      business, title, location, description, email,
+      category: document.getElementById('j-category').value,
+      period: document.getElementById('j-period').value.trim() || null,
+      salary: document.getElementById('j-salary').value.trim() || null,
+      phone: document.getElementById('j-phone').value.trim() || null,
+      perks: getChipValues('j-perks'),
+      skills: getChipValues('j-skills'),
+      logo_url: uploadResults.logo_url,
+      user_id: currentUser.id
+    };
+
+    let error;
+    if (editingJobId) {
+      ({ error } = await db.from('jobs').update(jobData).eq('id', editingJobId));
+    } else {
+      ({ error } = await db.from('jobs').insert([jobData]));
+    }
+
+    btn.disabled = false;
+    btn.innerHTML = editingJobId ? 'Αποθήκευση αλλαγών →' : 'Δημοσίευση αγγελίας →';
+
+    if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+
+    toast(editingJobId ? '✓ Η αγγελία ενημερώθηκε!' : '✓ Η αγγελία δημοσιεύτηκε!');
+    resetJobForm();
+    await loadJobs();
+    setTimeout(() => showPanel('jobs'), 600);
+  });
+
+  function resetJobForm() {
+    ['j-business','j-title','j-location','j-period','j-salary','j-description','j-email','j-phone'].forEach(id => document.getElementById(id).value = '');
+    clearChips('j-perks'); clearChips('j-skills');
+    resetUploadState();
+    editingJobId = null;
+    document.getElementById('job-form-title').textContent = 'Δημιουργία αγγελίας';
+    document.getElementById('submit-job').textContent = 'Δημοσίευση αγγελίας →';
+    document.getElementById('cancel-job-edit').style.display = 'none';
+  }
+
+  document.getElementById('cancel-job-edit').addEventListener('click', () => {
+    resetJobForm();
+    showPanel('jobs');
+  });
+
+  // ===== EDIT JOB =====
+  document.body.addEventListener('click', async e => {
+    if (e.target.classList.contains('edit-job-btn')) {
+      const jobId = e.target.dataset.jobId;
+      const job = jobs.find(j => String(j.id) === String(jobId));
+      if (!job) return;
+      editingJobId = job.id;
+      document.getElementById('j-business').value = job.business || '';
+      document.getElementById('j-title').value = job.title || '';
+      document.getElementById('j-location').value = job.location || '';
+      document.getElementById('j-category').value = job.category || 'Εστίαση';
+      document.getElementById('j-period').value = job.period || '';
+      document.getElementById('j-salary').value = job.salary || '';
+      document.getElementById('j-description').value = job.description || '';
+      document.getElementById('j-email').value = job.email || '';
+      document.getElementById('j-phone').value = job.phone || '';
+      clearChips('j-perks'); clearChips('j-skills');
+      (job.perks || []).forEach(s => {
+        const chip = document.querySelector(`#j-perks .chip[data-val="${s}"]`);
+        if (chip) chip.classList.add('active');
+      });
+      (job.skills || []).forEach(s => {
+        const chip = document.querySelector(`#j-skills .chip[data-val="${s}"]`);
+        if (chip) chip.classList.add('active');
+      });
+      // Show existing logo
+      resetUploadState();
+      if (job.logo_url) showExistingUpload('logo', job.logo_url);
+      document.getElementById('job-form-title').textContent = 'Επεξεργασία αγγελίας';
+      document.getElementById('submit-job').textContent = 'Αποθήκευση αλλαγών →';
+      document.getElementById('cancel-job-edit').style.display = 'inline-flex';
+      showPanel('post-job');
+    }
+
+    if (e.target.classList.contains('delete-job-btn')) {
+      const jobId = e.target.dataset.jobId;
+      const jobTitle = e.target.dataset.jobTitle;
+      showConfirm(
+        'Διαγραφή αγγελίας;',
+        `Είσαι σίγουρος ότι θες να διαγράψεις την αγγελία "${jobTitle}"; Δεν μπορείς να την επαναφέρεις.`,
+        async () => {
+          const { error } = await db.from('jobs').delete().eq('id', jobId);
+          if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+          toast('✓ Η αγγελία διαγράφηκε');
+          await loadJobs();
+          await renderHome();
+          renderJobs();
+        }
+      );
+    }
+
+    if (e.target.classList.contains('edit-cand-btn')) {
+      showPanel('post-candidate');
+    }
+
+    if (e.target.classList.contains('delete-cand-btn')) {
+      const candId = e.target.dataset.candId;
+      showConfirm(
+        'Διαγραφή προφίλ;',
+        'Είσαι σίγουρος ότι θες να διαγράψεις το προφίλ σου; Δεν μπορείς να το επαναφέρεις.',
+        async () => {
+          const { error } = await db.from('candidates').delete().eq('id', candId);
+          if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+          toast('✓ Το προφίλ διαγράφηκε');
+          editingCandId = null;
+          await loadCandidates();
+          await renderHome();
+          renderCandidates();
+        }
+      );
+    }
+  });
+
+  // ===== SUBMIT CANDIDATE (CREATE OR UPDATE) =====
+  document.getElementById('submit-candidate').addEventListener('click', async () => {
+    if (!currentUser) { toast('Πρέπει να είσαι συνδεδεμένος', 'error'); return; }
+
+    const btn = document.getElementById('submit-candidate');
+    const name = document.getElementById('c-name').value.trim();
+    const age = document.getElementById('c-age').value;
+    const city = document.getElementById('c-city').value.trim();
+    const bio = document.getElementById('c-bio').value.trim();
+    const email = document.getElementById('c-email').value.trim();
+
+    if (!name || !age || !city || !bio || !email) {
+      toast('Συμπληρώστε τα υποχρεωτικά πεδία (*)', 'error'); return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="loader"></span> Ανέβασμα & αποθήκευση...';
+
+    // Upload avatar/CV if present
+    const uploadResults = await processUploads('candidate');
+
+    const candData = {
+      name, city, bio, email,
+      age: parseInt(age),
+      role: document.getElementById('c-role').value,
+      experience: document.getElementById('c-experience').value,
+      availability: document.getElementById('c-availability').value.trim() || null,
+      locations: document.getElementById('c-locations').value.trim() || null,
+      phone: document.getElementById('c-phone').value.trim() || null,
+      skills: getChipValues('c-skills'),
+      perks_needed: getChipValues('c-perks-need'),
+      avatar_url: uploadResults.avatar_url,
+      cv_url: uploadResults.cv_url,
+      user_id: currentUser.id
+    };
+
+    let error;
+    if (editingCandId) {
+      ({ error } = await db.from('candidates').update(candData).eq('id', editingCandId));
+    } else {
+      ({ error } = await db.from('candidates').insert([candData]));
+    }
+
+    btn.disabled = false;
+
+    if (error) { 
+      btn.innerHTML = editingCandId ? 'Αποθήκευση αλλαγών →' : 'Δημοσίευση προφίλ →';
+      toast('Σφάλμα: ' + error.message, 'error'); 
+      return; 
+    }
+
+    toast(editingCandId ? '✓ Το προφίλ ενημερώθηκε!' : '✓ Το προφίλ δημιουργήθηκε!');
+    await loadCandidates();
+    await loadMyCandidateProfile();
+    setTimeout(() => showPanel('candidates'), 600);
+  });
+
+  document.getElementById('cancel-cand-edit').addEventListener('click', () => {
+    showPanel('candidates');
+  });
+
+  // ===== APPLY MODAL =====
+  document.body.addEventListener('click', e => {
+    if (e.target.classList.contains('apply-btn')) {
+      currentApplyJobId = e.target.dataset.jobId;
+      document.getElementById('apply-job-title').textContent = e.target.dataset.jobTitle;
+      if (currentUser) {
+        document.getElementById('apply-email').value = currentUser.email;
+        document.getElementById('apply-name').value = currentProfile?.full_name || '';
+      }
+      document.getElementById('apply-modal').classList.add('show');
+    }
+  });
+
+  document.getElementById('modal-close').addEventListener('click', () => {
+    document.getElementById('apply-modal').classList.remove('show');
+  });
+  document.getElementById('apply-modal').addEventListener('click', e => {
+    if (e.target.id === 'apply-modal') document.getElementById('apply-modal').classList.remove('show');
+  });
+
+  document.getElementById('submit-apply').addEventListener('click', async () => {
+    const btn = document.getElementById('submit-apply');
+    const name = document.getElementById('apply-name').value.trim();
+    const email = document.getElementById('apply-email').value.trim();
+    const phone = document.getElementById('apply-phone').value.trim();
+    const message = document.getElementById('apply-message').value.trim();
+
+    if (!name || !email) { toast('Συμπληρώστε όνομα και email', 'error'); return; }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="loader"></span> Αποστολή...';
+
+    const { error } = await db.from('applications').insert([{
+      job_id: currentApplyJobId,
+      candidate_name: name,
+      candidate_email: email,
+      candidate_phone: phone || null,
+      message: message || null,
+      applicant_user_id: currentUser ? currentUser.id : null
+    }]);
+
+    btn.disabled = false;
+    btn.innerHTML = 'Υποβολή αίτησης →';
+
+    if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+
+    toast('✓ Η αίτησή σου στάλθηκε!');
+    ['apply-name','apply-email','apply-phone','apply-message'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('apply-modal').classList.remove('show');
+    renderHome();
+  });
+
+  // ===== CONFIRM MODAL =====
+  function showConfirm(title, message, callback) {
+    document.getElementById('confirm-title').textContent = title;
+    document.getElementById('confirm-message').textContent = message;
+    confirmCallback = callback;
+    document.getElementById('confirm-modal').classList.add('show');
+  }
+  document.getElementById('confirm-cancel').addEventListener('click', () => {
+    document.getElementById('confirm-modal').classList.remove('show');
+    confirmCallback = null;
+  });
+  document.getElementById('confirm-yes').addEventListener('click', () => {
+    document.getElementById('confirm-modal').classList.remove('show');
+    if (confirmCallback) confirmCallback();
+    confirmCallback = null;
+  });
+
+  // ===== FILTERS =====
+  ['filter-jobs-category','filter-jobs-search'].forEach(id => 
+    document.getElementById(id).addEventListener('input', renderJobs));
+  ['filter-cand-role','filter-cand-search'].forEach(id => 
+    document.getElementById(id).addEventListener('input', renderCandidates));
+  document.getElementById('clear-job-filters').addEventListener('click', () => {
+    document.getElementById('filter-jobs-category').value = '';
+    document.getElementById('filter-jobs-search').value = '';
+    renderJobs();
+  });
+  document.getElementById('clear-cand-filters').addEventListener('click', () => {
+    document.getElementById('filter-cand-role').value = '';
+    document.getElementById('filter-cand-search').value = '';
+    renderCandidates();
+  });
+
+  // ===== REALTIME =====
+  db.channel('jobs-changes')
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'jobs' }, async () => {
+      await loadJobs();
+      const active = document.querySelector('.panel.active').id;
+      if (active === 'panel-home') renderHome();
+      if (active === 'panel-jobs') renderJobs();
+    }).subscribe();
+
+  db.channel('candidates-changes')
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'candidates' }, async () => {
+      await loadCandidates();
+      const active = document.querySelector('.panel.active').id;
+      if (active === 'panel-home') renderHome();
+      if (active === 'panel-candidates') renderCandidates();
+      if (active === 'panel-dashboard') renderDashboard();
+    }).subscribe();
+
+  db.channel('applications-changes')
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'applications' }, async () => {
+      const active = document.querySelector('.panel.active').id;
+      if (active === 'panel-home') renderHome();
+      if (active === 'panel-dashboard') renderDashboard();
+    }).subscribe();
+
+  db.channel('favorites-changes')
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'favorites' }, async () => {
+      if (!currentUser) return;
+      await loadFavorites();
+      const active = document.querySelector('.panel.active').id;
+      if (active === 'panel-home') renderHome();
+      if (active === 'panel-jobs') renderJobs();
+      if (active === 'panel-favorites') renderFavorites();
+      if (active === 'panel-dashboard') renderDashboard();
+    }).subscribe();
+
+  db.channel('messages-changes')
+    .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, async (payload) => {
+      if (!currentUser) return;
+      const msg = payload.new;
+
+      // Check if this message is in one of MY conversations
+      const conv = conversations.find(c => c.id === msg.conversation_id);
+      if (!conv && (msg.sender_id !== currentUser.id)) {
+        // Maybe a brand new conversation involving me — refresh the list
+        await loadConversations();
+      }
+
+      // If currently viewing this conversation, append
+      if (currentConversationId === msg.conversation_id) {
+        if (!currentMessages.find(m => m.id === msg.id)) {
+          currentMessages.push(msg);
+          renderChatMessages();
+          // Mark as read if it's not mine
+          if (msg.sender_id !== currentUser.id) {
+            await db.from('messages').update({ read_at: new Date().toISOString() }).eq('id', msg.id);
+          }
+        }
+      }
+
+      // Refresh conversation list & unread badge
+      await loadConversations();
+      await loadUnreadCount();
+      renderNav();
+      const active = document.querySelector('.panel.active').id;
+      if (active === 'panel-messages') renderConversationList();
+    }).subscribe();
+
+  db.channel('conversations-changes')
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'conversations' }, async () => {
+      if (!currentUser) return;
+      await loadConversations();
+      const active = document.querySelector('.panel.active').id;
+      if (active === 'panel-messages') renderConversationList();
+    }).subscribe();
+
+  // ===== DASHBOARD =====
+  function formatDate(dateStr) {
+    if (!dateStr) return '';
+    const d = new Date(dateStr);
+    const now = new Date();
+    const diffMs = now - d;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
+    if (diffMins < 1) return 'μόλις τώρα';
+    if (diffMins < 60) return `πριν ${diffMins} λεπτά`;
+    if (diffHours < 24) return `πριν ${diffHours} ώρες`;
+    if (diffDays < 7) return `πριν ${diffDays} μέρες`;
+    return d.toLocaleDateString('el-GR', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  function statusLabel(status) {
+    const map = {
+      pending: 'Σε αναμονή',
+      accepted: 'Αποδεκτή',
+      rejected: 'Απορρίφθηκε',
+      viewed: 'Είδα'
+    };
+    return map[status] || status;
+  }
+
+  async function renderDashboard() {
+    if (!currentUser || !currentProfile) {
+      document.getElementById('panel-dashboard').innerHTML = `
+        <section>
+          <div class="info-banner">⚠️ Πρέπει να συνδεθείς για να δεις το dashboard. <a data-go="login" style="color: var(--aegean); font-weight: 600; cursor: pointer;">Σύνδεση</a></div>
+        </section>
+      `;
+      document.querySelectorAll('#panel-dashboard [data-go]').forEach(a => a.addEventListener('click', () => showPanel(a.dataset.go)));
+      return;
+    }
+
+    const isEmployer = currentProfile.account_type === 'employer';
+    const greeting = currentProfile.full_name || currentUser.email.split('@')[0];
+    document.getElementById('dashboard-title').textContent = isEmployer ? `Καλώς ήρθες, ${greeting}` : `Γεια σου, ${greeting}`;
+    document.getElementById('dashboard-subtitle').textContent = isEmployer ? 'Διαχείριση αγγελιών & αιτήσεων' : 'Το προφίλ μου & οι αιτήσεις μου';
+
+    if (isEmployer) {
+      await renderEmployerDashboard();
+    } else {
+      await renderWorkerDashboard();
+    }
+  }
+
+  async function renderEmployerDashboard() {
+    document.getElementById('dash-my-jobs-section').style.display = 'block';
+    document.getElementById('dash-received-apps-section').style.display = 'block';
+    document.getElementById('dash-my-profile-section').style.display = 'none';
+    document.getElementById('dash-my-apps-section').style.display = 'none';
+
+    // Φόρτωση δικών μου αγγελιών
+    const { data: myJobs } = await db
+      .from('jobs').select('*')
+      .eq('user_id', currentUser.id)
+      .order('created_at', { ascending: false });
+
+    // Φόρτωση αιτήσεων που έχω λάβει
+    const myJobIds = (myJobs || []).map(j => j.id);
+    let receivedApps = [];
+    if (myJobIds.length > 0) {
+      const { data: apps } = await db
+        .from('applications').select('*')
+        .in('job_id', myJobIds)
+        .order('created_at', { ascending: false });
+      receivedApps = apps || [];
+    }
+
+    // Στατιστικά
+    const totalJobs = (myJobs || []).length;
+    const activeJobs = (myJobs || []).filter(j => j.status === 'active').length;
+    const totalApps = receivedApps.length;
+    const pendingApps = receivedApps.filter(a => a.status === 'pending').length;
+    const acceptedApps = receivedApps.filter(a => a.status === 'accepted').length;
+
+    document.getElementById('dash-stats').innerHTML = `
+      <div class="dash-stat">
+        <div class="num">${totalJobs}</div>
+        <div class="label">Αγγελίες</div>
+        <div class="sub">${activeJobs} ενεργές</div>
+      </div>
+      <div class="dash-stat terracotta">
+        <div class="num">${totalApps}</div>
+        <div class="label">Αιτήσεις</div>
+        <div class="sub">σύνολο</div>
+      </div>
+      <div class="dash-stat gold">
+        <div class="num">${pendingApps}</div>
+        <div class="label">Σε αναμονή</div>
+        <div class="sub">περιμένουν απάντηση</div>
+      </div>
+      <div class="dash-stat olive">
+        <div class="num">${acceptedApps}</div>
+        <div class="label">Αποδεκτές</div>
+        <div class="sub">προσλήψεις σεζόν</div>
+      </div>
+    `;
+
+    // Λίστα αγγελιών
+    const myJobsContainer = document.getElementById('dash-my-jobs');
+    if (!myJobs || myJobs.length === 0) {
+      myJobsContainer.innerHTML = `
+        <div class="dash-empty">
+          <span class="emoji">📋</span>
+          <p>Δεν έχεις δημοσιεύσει καμία αγγελία ακόμη</p>
+          <button class="btn btn-terracotta" data-go="post-job">+ Δημιούργησε την πρώτη σου</button>
+        </div>
+      `;
+    } else {
+      myJobsContainer.innerHTML = myJobs.map(j => {
+        const appsForThisJob = receivedApps.filter(a => a.job_id === j.id).length;
+        return `
+          <div class="my-job-row">
+            <div class="job-title-cell">
+              <h5>${escapeHtml(j.title)}</h5>
+              <div class="business">${escapeHtml(j.business)} · ${escapeHtml(j.location)}</div>
+            </div>
+            <div class="apps-count">
+              <span class="num">${appsForThisJob}</span>
+              <span class="lbl">Αιτήσεις</span>
+            </div>
+            <span class="job-status ${j.status}">${j.status === 'active' ? 'Ενεργή' : 'Κλειστή'}</span>
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              <button class="btn btn-secondary btn-small toggle-job-status" data-job-id="${j.id}" data-current="${j.status}">${j.status === 'active' ? '⏸ Κλείσιμο' : '▶ Άνοιγμα'}</button>
+              <button class="btn btn-secondary btn-small edit-job-btn" data-job-id="${j.id}">✎</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Filter αγγελιών στο dropdown
+    const jobFilter = document.getElementById('filter-app-job');
+    const currentJobFilter = jobFilter.value;
+    jobFilter.innerHTML = '<option value="">Όλες οι αγγελίες</option>' + 
+      (myJobs || []).map(j => `<option value="${j.id}" ${String(j.id) === currentJobFilter ? 'selected' : ''}>${escapeHtml(j.title)}</option>`).join('');
+
+    // Render received applications
+    renderReceivedApps(receivedApps, myJobs || []);
+
+    // Add filter listeners (once)
+    document.getElementById('filter-app-status').onchange = () => renderReceivedApps(receivedApps, myJobs || []);
+    document.getElementById('filter-app-job').onchange = () => renderReceivedApps(receivedApps, myJobs || []);
+
+    document.querySelectorAll('#panel-dashboard [data-go]').forEach(a => a.addEventListener('click', () => showPanel(a.dataset.go)));
+  }
+
+  function renderReceivedApps(apps, myJobs) {
+    const statusFilter = document.getElementById('filter-app-status').value;
+    const jobFilter = document.getElementById('filter-app-job').value;
+
+    let filtered = apps;
+    if (statusFilter) filtered = filtered.filter(a => a.status === statusFilter);
+    if (jobFilter) filtered = filtered.filter(a => String(a.job_id) === String(jobFilter));
+
+    document.getElementById('dash-received-count').textContent = `${filtered.length} αιτήσεις`;
+
+    const container = document.getElementById('dash-received-apps');
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div class="dash-empty">
+          <span class="emoji">📨</span>
+          <p>${apps.length === 0 ? 'Δεν έχεις λάβει αιτήσεις ακόμη' : 'Δεν βρέθηκαν αιτήσεις με αυτά τα φίλτρα'}</p>
+          ${apps.length === 0 ? '<small style="font-style: normal; font-family: Manrope, sans-serif;">Όταν κάποιος κάνει αίτηση, θα εμφανιστεί εδώ</small>' : ''}
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = filtered.map(app => {
+      const job = myJobs.find(j => j.id === app.job_id);
+      const jobTitle = job ? `${job.title} · ${job.business}` : 'Διαγραμμένη αγγελία';
+      return `
+        <div class="application-card ${app.status}">
+          <div class="app-info">
+            <h5>${escapeHtml(app.candidate_name)}</h5>
+            <div class="for-job">→ Αίτηση για: ${escapeHtml(jobTitle)}</div>
+            <div class="contact">
+              <span>📧 <a href="mailto:${escapeHtml(app.candidate_email)}" style="color: var(--aegean);">${escapeHtml(app.candidate_email)}</a></span>
+              ${app.candidate_phone ? `<span>📞 <a href="tel:${escapeHtml(app.candidate_phone)}" style="color: var(--aegean);">${escapeHtml(app.candidate_phone)}</a></span>` : ''}
+            </div>
+            ${app.message ? `<div class="message">"${escapeHtml(app.message)}"</div>` : ''}
+            <div class="timestamp">${formatDate(app.created_at)}</div>
+          </div>
+          <div class="app-actions">
+            <span class="status-badge ${app.status}">${statusLabel(app.status)}</span>
+            ${app.status === 'pending' ? `
+              <button class="btn btn-primary btn-small accept-app-btn" data-app-id="${app.id}">✓ Αποδοχή</button>
+              <button class="btn btn-danger btn-small reject-app-btn" data-app-id="${app.id}">✗ Απόρριψη</button>
+            ` : `
+              <button class="btn btn-secondary btn-small reset-app-btn" data-app-id="${app.id}">↻ Επαναφορά</button>
+            `}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  async function renderWorkerDashboard() {
+    document.getElementById('dash-my-jobs-section').style.display = 'none';
+    document.getElementById('dash-received-apps-section').style.display = 'none';
+    document.getElementById('dash-my-profile-section').style.display = 'block';
+    document.getElementById('dash-my-apps-section').style.display = 'block';
+
+    // Φόρτωση προφίλ μου
+    const { data: myProfile } = await db
+      .from('candidates').select('*')
+      .eq('user_id', currentUser.id).maybeSingle();
+
+    // Φόρτωση αιτήσεών μου (by user_id ή email)
+    const { data: myApps } = await db
+      .from('applications').select('*')
+      .or(`applicant_user_id.eq.${currentUser.id},candidate_email.eq.${currentUser.email}`)
+      .order('created_at', { ascending: false });
+
+    const totalApps = (myApps || []).length;
+    const pendingApps = (myApps || []).filter(a => a.status === 'pending').length;
+    const acceptedApps = (myApps || []).filter(a => a.status === 'accepted').length;
+    const rejectedApps = (myApps || []).filter(a => a.status === 'rejected').length;
+
+    document.getElementById('dash-stats').innerHTML = `
+      <div class="dash-stat">
+        <div class="num">${totalApps}</div>
+        <div class="label">Αιτήσεις</div>
+        <div class="sub">σύνολο που έκανα</div>
+      </div>
+      <div class="dash-stat gold">
+        <div class="num">${pendingApps}</div>
+        <div class="label">Σε αναμονή</div>
+        <div class="sub">περιμένω απάντηση</div>
+      </div>
+      <div class="dash-stat olive">
+        <div class="num">${acceptedApps}</div>
+        <div class="label">Αποδεκτές</div>
+        <div class="sub">συγχαρητήρια!</div>
+      </div>
+      <div class="dash-stat terracotta">
+        <div class="num">${favorites.length}</div>
+        <div class="label">Αγαπημένα</div>
+        <div class="sub">αποθηκευμένες αγγελίες</div>
+      </div>
+    `;
+
+    // Profile preview
+    const profileContainer = document.getElementById('dash-my-profile');
+    if (!myProfile) {
+      profileContainer.innerHTML = `
+        <div class="dash-empty">
+          <span class="emoji">👤</span>
+          <p>Δεν έχεις φτιάξει το προφίλ σου ακόμη</p>
+          <button class="btn btn-primary" data-go="post-candidate">Φτιάξε το τώρα →</button>
+        </div>
+      `;
+    } else {
+      const skills = Array.isArray(myProfile.skills) ? myProfile.skills : [];
+      const avatarHtml = myProfile.avatar_url
+        ? `<img class="avatar-lg" src="${escapeHtml(myProfile.avatar_url)}" alt="${escapeHtml(myProfile.name)}">`
+        : `<div class="avatar-lg avatar-placeholder lg">${escapeHtml((myProfile.name || '?').charAt(0))}</div>`;
+      profileContainer.innerHTML = `
+        <div class="profile-banner">
+          ${avatarHtml}
+          <div class="info">
+            <h4>${escapeHtml(myProfile.name)}, ${myProfile.age}</h4>
+            <div class="role-line">${escapeHtml(myProfile.role)} · ${escapeHtml(myProfile.experience || '—')}</div>
+            <div class="meta">
+              <span>📍 ${escapeHtml(myProfile.city)}</span>
+              ${myProfile.availability ? `<span>📅 ${escapeHtml(myProfile.availability)}</span>` : ''}
+            </div>
+            <div class="actions-row">
+              ${myProfile.cv_url ? `<a href="${escapeHtml(myProfile.cv_url)}" target="_blank" class="cv-badge">📄 Δες το CV μου</a>` : '<span style="font-size: 0.8rem; color: rgba(13,27,42,0.5);">Δεν έχεις ανεβάσει CV</span>'}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // My applications
+    const appsContainer = document.getElementById('dash-my-apps');
+    document.getElementById('dash-my-apps-count').textContent = `${totalApps} αιτήσεις`;
+
+    if (!myApps || myApps.length === 0) {
+      appsContainer.innerHTML = `
+        <div class="dash-empty">
+          <span class="emoji">📤</span>
+          <p>Δεν έχεις κάνει καμία αίτηση ακόμη</p>
+          <button class="btn btn-secondary" data-go="jobs">Ψάξε αγγελίες →</button>
+        </div>
+      `;
+    } else {
+      // Φόρτωση τίτλων αγγελιών για όσες υπάρχουν
+      const jobIds = [...new Set(myApps.map(a => a.job_id))];
+      const { data: relatedJobs } = await db
+        .from('jobs').select('id, title, business, location, salary')
+        .in('id', jobIds);
+      const jobsMap = {};
+      (relatedJobs || []).forEach(j => { jobsMap[j.id] = j; });
+
+      appsContainer.innerHTML = myApps.map(app => {
+        const job = jobsMap[app.job_id];
+        return `
+          <div class="application-card ${app.status}">
+            <div class="app-info">
+              <h5>${job ? escapeHtml(job.title) : 'Διαγραμμένη αγγελία'}</h5>
+              <div class="for-job">${job ? escapeHtml(job.business + ' · ' + job.location) : ''}</div>
+              ${job && job.salary ? `<div class="contact"><span class="pay" style="color: var(--terracotta); font-family: Fraunces, serif;">${escapeHtml(job.salary)}</span></div>` : ''}
+              ${app.message ? `<div class="message">"${escapeHtml(app.message)}"</div>` : ''}
+              <div class="timestamp">Έγινε ${formatDate(app.created_at)}</div>
+            </div>
+            <div class="app-actions">
+              <span class="status-badge ${app.status}">${statusLabel(app.status)}</span>
+              ${app.status === 'pending' ? `<button class="btn btn-danger btn-small cancel-app-btn" data-app-id="${app.id}">Ακύρωση</button>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    document.querySelectorAll('#panel-dashboard [data-go]').forEach(a => a.addEventListener('click', () => showPanel(a.dataset.go)));
+  }
+
+  // ===== APPLICATION ACTIONS =====
+  document.body.addEventListener('click', async e => {
+    // Employer: Accept application
+    if (e.target.classList.contains('accept-app-btn')) {
+      const appId = e.target.dataset.appId;
+      e.target.disabled = true;
+      const { error } = await db.from('applications').update({ status: 'accepted' }).eq('id', appId);
+      if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+      toast('✓ Η αίτηση έγινε αποδεκτή!');
+      await renderDashboard();
+    }
+
+    // Employer: Reject application
+    if (e.target.classList.contains('reject-app-btn')) {
+      const appId = e.target.dataset.appId;
+      e.target.disabled = true;
+      const { error } = await db.from('applications').update({ status: 'rejected' }).eq('id', appId);
+      if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+      toast('Η αίτηση απορρίφθηκε');
+      await renderDashboard();
+    }
+
+    // Employer: Reset application status
+    if (e.target.classList.contains('reset-app-btn')) {
+      const appId = e.target.dataset.appId;
+      const { error } = await db.from('applications').update({ status: 'pending' }).eq('id', appId);
+      if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+      toast('Η αίτηση επανήλθε σε αναμονή');
+      await renderDashboard();
+    }
+
+    // Employer: Toggle job status (active/closed)
+    if (e.target.classList.contains('toggle-job-status')) {
+      const jobId = e.target.dataset.jobId;
+      const current = e.target.dataset.current;
+      const newStatus = current === 'active' ? 'closed' : 'active';
+      const { error } = await db.from('jobs').update({ status: newStatus }).eq('id', jobId);
+      if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+      toast(newStatus === 'active' ? '✓ Η αγγελία είναι ξανά ενεργή' : 'Η αγγελία έκλεισε');
+      await loadJobs();
+      await renderDashboard();
+    }
+
+    // Worker: Cancel own application
+    if (e.target.classList.contains('cancel-app-btn')) {
+      const appId = e.target.dataset.appId;
+      showConfirm(
+        'Ακύρωση αίτησης;',
+        'Θες σίγουρα να ακυρώσεις την αίτησή σου;',
+        async () => {
+          const { error } = await db.from('applications').delete().eq('id', appId);
+          if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+          toast('Η αίτηση ακυρώθηκε');
+          await renderDashboard();
+        }
+      );
+    }
+  });
+
+  // ===== MESSAGING =====
+
+  async function loadConversations() {
+    if (!currentUser) { conversations = []; return; }
+    const { data, error } = await db
+      .from('conversations').select('*')
+      .or(`user1_id.eq.${currentUser.id},user2_id.eq.${currentUser.id}`)
+      .order('last_message_at', { ascending: false });
+    if (error) { console.error(error); conversations = []; return; }
+    conversations = data || [];
+
+    // Φόρτωσε προφίλ των "άλλων" χρηστών για display
+    const otherIds = [...new Set(conversations.map(c => 
+      c.user1_id === currentUser.id ? c.user2_id : c.user1_id
+    ))].filter(id => !userProfilesCache[id]);
+
+    if (otherIds.length > 0) {
+      const { data: profs } = await db.from('profiles').select('*').in('id', otherIds);
+      (profs || []).forEach(p => { userProfilesCache[p.id] = p; });
+
+      // Επίσης πάρε τα candidate avatars αν υπάρχουν
+      const { data: cands } = await db.from('candidates').select('user_id, avatar_url').in('user_id', otherIds);
+      (cands || []).forEach(c => {
+        if (userProfilesCache[c.user_id]) userProfilesCache[c.user_id].avatar_url = c.avatar_url;
+      });
+
+      // Και logos από αγγελίες αν είναι εργοδότες
+      const { data: empJobs } = await db.from('jobs').select('user_id, logo_url, business').in('user_id', otherIds);
+      (empJobs || []).forEach(j => {
+        if (userProfilesCache[j.user_id] && !userProfilesCache[j.user_id].logo_url) {
+          userProfilesCache[j.user_id].logo_url = j.logo_url;
+          userProfilesCache[j.user_id].business = j.business;
+        }
+      });
+    }
+  }
+
+  async function loadUnreadCount() {
+    if (!currentUser) { unreadMessagesCount = 0; return; }
+    // Find conversations user participates in
+    const convIds = conversations.map(c => c.id);
+    if (convIds.length === 0) { unreadMessagesCount = 0; return; }
+
+    const { count } = await db
+      .from('messages')
+      .select('*', { count: 'exact', head: true })
+      .in('conversation_id', convIds)
+      .neq('sender_id', currentUser.id)
+      .is('read_at', null);
+    unreadMessagesCount = count || 0;
+  }
+
+  function getOtherUserInfo(conv) {
+    const otherId = conv.user1_id === currentUser.id ? conv.user2_id : conv.user1_id;
+    const profile = userProfilesCache[otherId] || {};
+    const displayName = profile.account_type === 'employer' && profile.business
+      ? profile.business
+      : (profile.full_name || 'Χρήστης');
+    return {
+      id: otherId,
+      name: displayName,
+      avatar_url: profile.avatar_url || profile.logo_url,
+      role: profile.account_type === 'employer' ? 'Εργοδότης' : 'Εργαζόμενος'
+    };
+  }
+
+  async function getUnreadCountForConversation(convId) {
+    const { count } = await db
+      .from('messages')
+      .select('*', { count: 'exact', head: true })
+      .eq('conversation_id', convId)
+      .neq('sender_id', currentUser.id)
+      .is('read_at', null);
+    return count || 0;
+  }
+
+  async function openMessagesPanel() {
+    if (!currentUser) {
+      document.getElementById('messages-content').innerHTML = `
+        <div class="info-banner">⚠️ Πρέπει να συνδεθείς για να δεις τα μηνύματά σου. <a data-go="login" style="color: var(--aegean); font-weight: 600; cursor: pointer;">Σύνδεση</a></div>
+      `;
+      document.querySelectorAll('#messages-content [data-go]').forEach(a => a.addEventListener('click', () => showPanel(a.dataset.go)));
+      return;
+    }
+    await loadConversations();
+    await loadUnreadCount();
+    renderConversationList();
+    renderNav();
+    document.getElementById('messages-subtitle').textContent = 
+      conversations.length === 0 ? 'Δεν έχεις συνομιλίες ακόμη' : `${conversations.length} συνομιλίες`;
+  }
+
+  async function renderConversationList() {
+    const container = document.getElementById('conv-list-items');
+    if (conversations.length === 0) {
+      container.innerHTML = `
+        <div style="padding: 40px 20px; text-align: center; color: rgba(13,27,42,0.5); font-size: 0.9rem;">
+          <div style="font-size: 2rem; margin-bottom: 12px;">💭</div>
+          <p style="font-family: 'Fraunces', serif; font-style: italic;">Δεν έχεις συνομιλίες ακόμη</p>
+          <p style="font-size: 0.8rem; margin-top: 8px;">${currentProfile?.account_type === 'employer' 
+            ? 'Πάτα "💬 Επικοινωνία" σε κάποιον υποψήφιο για να ξεκινήσεις'
+            : 'Πάτα 💬 σε μια αγγελία για να επικοινωνήσεις με τον εργοδότη'}</p>
+        </div>
+      `;
+      return;
+    }
+
+    // Get unread counts for each conversation
+    const unreadByConv = {};
+    for (const conv of conversations) {
+      unreadByConv[conv.id] = await getUnreadCountForConversation(conv.id);
+    }
+
+    container.innerHTML = conversations.map(conv => {
+      const other = getOtherUserInfo(conv);
+      const unread = unreadByConv[conv.id] || 0;
+      const isActive = currentConversationId === conv.id;
+      const avatarHtml = other.avatar_url
+        ? `<img class="av" src="${escapeHtml(other.avatar_url)}" alt="${escapeHtml(other.name)}">`
+        : `<div class="av placeholder">${escapeHtml(other.name.charAt(0))}</div>`;
+
+      return `
+        <div class="conv-item ${isActive ? 'active' : ''} ${unread > 0 ? 'unread' : ''}" data-conv-id="${conv.id}">
+          ${avatarHtml}
+          <div class="info">
+            <div class="name">${escapeHtml(other.name)}</div>
+            <div class="preview">${escapeHtml(conv.last_message || 'Νέα συνομιλία')}</div>
+          </div>
+          <div class="time">${formatRelativeShort(conv.last_message_at)}</div>
+          ${unread > 0 ? '<div class="unread-dot"></div>' : ''}
+        </div>
+      `;
+    }).join('');
+
+    container.querySelectorAll('.conv-item').forEach(el => {
+      el.addEventListener('click', () => openConversation(parseInt(el.dataset.convId)));
+    });
+  }
+
+  function formatRelativeShort(dateStr) {
+    if (!dateStr) return '';
+    const d = new Date(dateStr);
+    const now = new Date();
+    const diffMins = Math.floor((now - d) / 60000);
+    if (diffMins < 1) return 'τώρα';
+    if (diffMins < 60) return `${diffMins}'`;
+    const diffHours = Math.floor(diffMins / 60);
+    if (diffHours < 24) return `${diffHours}h`;
+    const diffDays = Math.floor(diffHours / 24);
+    if (diffDays < 7) return `${diffDays}μ`;
+    return d.toLocaleDateString('el-GR', { day: 'numeric', month: 'short' });
+  }
+
+  async function openConversation(convId) {
+    currentConversationId = convId;
+    const conv = conversations.find(c => c.id === convId);
+    if (!conv) return;
+
+    // Load messages
+    const { data: msgs, error } = await db
+      .from('messages').select('*')
+      .eq('conversation_id', convId)
+      .order('created_at', { ascending: true });
+    if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+    currentMessages = msgs || [];
+
+    // Mark received as read
+    const unreadIds = currentMessages
+      .filter(m => m.sender_id !== currentUser.id && !m.read_at)
+      .map(m => m.id);
+    if (unreadIds.length > 0) {
+      await db.from('messages').update({ read_at: new Date().toISOString() }).in('id', unreadIds);
+      await loadUnreadCount();
+      renderNav();
+    }
+
+    renderChatArea(conv);
+    renderConversationList();
+
+    // Mobile: switch view
+    document.getElementById('messages-container').classList.add('chat-open');
+  }
+
+  function renderChatArea(conv) {
+    const other = getOtherUserInfo(conv);
+    const avatarHtml = other.avatar_url
+      ? `<img class="av" src="${escapeHtml(other.avatar_url)}" alt="${escapeHtml(other.name)}">`
+      : `<div class="av placeholder">${escapeHtml(other.name.charAt(0))}</div>`;
+
+    document.getElementById('chat-area').innerHTML = `
+      <div class="chat-header">
+        <button class="btn btn-secondary btn-small chat-back-btn" id="chat-back" style="padding: 6px 10px;">←</button>
+        ${avatarHtml}
+        <div>
+          <h5>${escapeHtml(other.name)}</h5>
+          <div class="role-tag">${escapeHtml(other.role)}</div>
+        </div>
+      </div>
+      <div class="chat-messages" id="chat-messages-list"></div>
+      <div class="chat-input-area">
+        <textarea id="chat-input" placeholder="Γράψε μήνυμα..." rows="1"></textarea>
+        <button class="send-btn" id="send-msg-btn">Αποστολή →</button>
+      </div>
+    `;
+
+    renderChatMessages();
+
+    // Wire up
+    const input = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-msg-btn');
+
+    input.addEventListener('input', () => {
+      input.style.height = 'auto';
+      input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+    });
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+    sendBtn.addEventListener('click', sendMessage);
+
+    document.getElementById('chat-back').addEventListener('click', () => {
+      document.getElementById('messages-container').classList.remove('chat-open');
+      currentConversationId = null;
+      renderConversationList();
+    });
+
+    setTimeout(() => {
+      const list = document.getElementById('chat-messages-list');
+      if (list) list.scrollTop = list.scrollHeight;
+      input.focus();
+    }, 50);
+  }
+
+  function renderChatMessages() {
+    const list = document.getElementById('chat-messages-list');
+    if (!list) return;
+
+    if (currentMessages.length === 0) {
+      list.innerHTML = `
+        <div class="chat-empty" style="background: transparent;">
+          <span class="icon">👋</span>
+          <h4>Πες ένα γεια</h4>
+          <p>Στείλε το πρώτο μήνυμα για να ξεκινήσει η συνομιλία</p>
+        </div>
+      `;
+      return;
+    }
+
+    let html = '';
+    let lastDay = '';
+    currentMessages.forEach(msg => {
+      const d = new Date(msg.created_at);
+      const day = d.toLocaleDateString('el-GR', { day: 'numeric', month: 'long', year: 'numeric' });
+      if (day !== lastDay) {
+        html += `<div class="day-divider"><span>${day}</span></div>`;
+        lastDay = day;
+      }
+      const time = d.toLocaleTimeString('el-GR', { hour: '2-digit', minute: '2-digit' });
+      const isMine = msg.sender_id === currentUser.id;
+      html += `
+        <div class="msg-bubble ${isMine ? 'mine' : 'theirs'}">
+          ${escapeHtml(msg.content)}
+          <span class="time">${time}</span>
+        </div>
+      `;
+    });
+    list.innerHTML = html;
+    list.scrollTop = list.scrollHeight;
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-msg-btn');
+    const content = input.value.trim();
+    if (!content || !currentConversationId) return;
+
+    sendBtn.disabled = true;
+    const { error } = await db.from('messages').insert([{
+      conversation_id: currentConversationId,
+      sender_id: currentUser.id,
+      content
+    }]);
+    sendBtn.disabled = false;
+
+    if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+
+    input.value = '';
+    input.style.height = 'auto';
+    // Reload messages (the realtime subscription will also trigger but instant feedback is nicer)
+    const { data: msgs } = await db
+      .from('messages').select('*')
+      .eq('conversation_id', currentConversationId)
+      .order('created_at', { ascending: true });
+    currentMessages = msgs || [];
+    renderChatMessages();
+
+    // Update conv list to reflect new last message
+    await loadConversations();
+    renderConversationList();
+  }
+
+  async function startConversationWith(otherUserId, otherName) {
+    if (!currentUser) {
+      toast('Πρέπει να συνδεθείς πρώτα', 'error');
+      return;
+    }
+    if (otherUserId === currentUser.id) {
+      toast('Δεν μπορείς να στείλεις μήνυμα στον εαυτό σου', 'error');
+      return;
+    }
+
+    // Cache the other user name immediately so the chat header has it
+    if (!userProfilesCache[otherUserId]) {
+      userProfilesCache[otherUserId] = { full_name: otherName };
+    }
+
+    // Use the database function to get/create
+    const { data, error } = await db.rpc('get_or_create_conversation', { other_user_id: otherUserId });
+    if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+
+    const convId = data;
+    showPanel('messages');
+    // Wait for panel to load conversations, then open
+    await new Promise(r => setTimeout(r, 200));
+    await loadConversations();
+    await openConversation(convId);
+  }
+
+  // Click handler for contact buttons
+  document.body.addEventListener('click', e => {
+    const contactBtn = e.target.closest('.contact-btn');
+    if (contactBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      startConversationWith(contactBtn.dataset.otherUserId, contactBtn.dataset.otherName);
+    }
+  });
+
+  // ===== FAVORITES =====
+  async function loadFavorites() {
+    if (!currentUser) { favorites = []; return; }
+    const { data, error } = await db
+      .from('favorites').select('job_id')
+      .eq('user_id', currentUser.id);
+    if (error) { console.error(error); favorites = []; return; }
+    favorites = (data || []).map(f => f.job_id);
+  }
+
+  async function toggleFavorite(jobId) {
+    if (!currentUser) {
+      toast('Πρέπει να είσαι συνδεδεμένος', 'error');
+      return;
+    }
+    const numericId = typeof jobId === 'string' ? parseInt(jobId) : jobId;
+    const isFav = favorites.includes(numericId);
+
+    if (isFav) {
+      // Remove
+      const { error } = await db.from('favorites')
+        .delete()
+        .eq('user_id', currentUser.id)
+        .eq('job_id', numericId);
+      if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+      favorites = favorites.filter(id => id !== numericId);
+      toast('Αφαιρέθηκε από τα αγαπημένα');
+    } else {
+      // Add
+      const { error } = await db.from('favorites')
+        .insert([{ user_id: currentUser.id, job_id: numericId }]);
+      if (error) { toast('Σφάλμα: ' + error.message, 'error'); return; }
+      favorites.push(numericId);
+      toast('❤ Αποθηκεύτηκε στα αγαπημένα!');
+    }
+
+    // Re-render visible cards
+    const active = document.querySelector('.panel.active').id;
+    if (active === 'panel-home') renderHome();
+    if (active === 'panel-jobs') renderJobs();
+    if (active === 'panel-favorites') renderFavorites();
+    if (active === 'panel-dashboard') renderDashboard();
+  }
+
+  function renderFavorites() {
+    const favJobs = jobs.filter(j => favorites.includes(j.id));
+    document.getElementById('fav-count').textContent = `${favJobs.length} αγγελίες`;
+    const container = document.getElementById('all-favorites');
+    if (favJobs.length === 0) {
+      container.innerHTML = `
+        <div class="empty">
+          Δεν έχεις αποθηκεύσει αγγελίες ακόμη.<br><br>
+          <small style="font-style: normal; font-family: 'Manrope', sans-serif; font-size: 0.85rem;">Πάτα την καρδούλα ♡ σε όποια αγγελία σου αρέσει για να τη βρίσκεις εδώ εύκολα.</small>
+          <br><br>
+          <button class="btn btn-primary" data-go="jobs">Δες αγγελίες →</button>
+        </div>
+      `;
+      container.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => showPanel(b.dataset.go)));
+      return;
+    }
+    container.innerHTML = favJobs.map(jobCard).join('');
+  }
+
+  // Click handler for fav buttons
+  document.body.addEventListener('click', e => {
+    const favBtn = e.target.closest('.fav-btn');
+    if (favBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleFavorite(favBtn.dataset.favJobId);
+    }
+  });
+
+  // ===== FILE UPLOADS =====
+  // State για files που έχουν επιλεγεί αλλά δεν έχουν ανέβει ακόμη
+  const pendingUploads = {
+    avatar: null,    // File object
+    cv: null,
+    logo: null
+  };
+  // State για URLs που έχουν ήδη ανέβει (για editing υπάρχοντος προφίλ)
+  const existingUrls = {
+    avatar_url: null,
+    cv_url: null,
+    logo_url: null
+  };
+
+  function formatFileSize(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+  }
+
+  function setupFileInput(config) {
+    const { fileInputId, zoneId, previewId, previewImgId, previewNameId, previewSizeId, removeId, kind, maxMB, accept } = config;
+    const fileInput = document.getElementById(fileInputId);
+    const zone = document.getElementById(zoneId);
+    const preview = document.getElementById(previewId);
+    const previewName = document.getElementById(previewNameId);
+    const previewSize = document.getElementById(previewSizeId);
+    const removeBtn = document.getElementById(removeId);
+    const previewImg = previewImgId ? document.getElementById(previewImgId) : null;
+
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      if (file.size > maxMB * 1024 * 1024) {
+        toast(`Το αρχείο είναι πολύ μεγάλο (max ${maxMB}MB)`, 'error');
+        fileInput.value = '';
+        return;
+      }
+      pendingUploads[kind] = file;
+      previewName.textContent = file.name;
+      previewSize.textContent = formatFileSize(file.size);
+      if (previewImg) {
+        const reader = new FileReader();
+        reader.onload = ev => previewImg.src = ev.target.result;
+        reader.readAsDataURL(file);
+      }
+      preview.style.display = 'flex';
+      zone.classList.add('has-file');
+    });
+
+    removeBtn.addEventListener('click', () => {
+      pendingUploads[kind] = null;
+      fileInput.value = '';
+      preview.style.display = 'none';
+      zone.classList.remove('has-file');
+      // also clear existing url so it gets removed on save
+      if (kind === 'avatar') existingUrls.avatar_url = null;
+      if (kind === 'cv') existingUrls.cv_url = null;
+      if (kind === 'logo') existingUrls.logo_url = null;
+    });
+
+    // Drag & drop
+    zone.addEventListener('dragover', e => { e.preventDefault(); zone.style.borderColor = 'var(--aegean)'; });
+    zone.addEventListener('dragleave', () => { zone.style.borderColor = ''; });
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.style.borderColor = '';
+      const file = e.dataTransfer.files[0];
+      if (file) {
+        fileInput.files = e.dataTransfer.files;
+        fileInput.dispatchEvent(new Event('change'));
+      }
+    });
+  }
+
+  setupFileInput({
+    fileInputId: 'c-avatar-file', zoneId: 'c-avatar-zone', previewId: 'c-avatar-preview',
+    previewImgId: 'c-avatar-preview-img', previewNameId: 'c-avatar-preview-name',
+    previewSizeId: 'c-avatar-preview-size', removeId: 'c-avatar-remove',
+    kind: 'avatar', maxMB: 5
+  });
+
+  setupFileInput({
+    fileInputId: 'c-cv-file', zoneId: 'c-cv-zone', previewId: 'c-cv-preview',
+    previewNameId: 'c-cv-preview-name', previewSizeId: 'c-cv-preview-size',
+    removeId: 'c-cv-remove', kind: 'cv', maxMB: 10
+  });
+
+  setupFileInput({
+    fileInputId: 'j-logo-file', zoneId: 'j-logo-zone', previewId: 'j-logo-preview',
+    previewImgId: 'j-logo-preview-img', previewNameId: 'j-logo-preview-name',
+    previewSizeId: 'j-logo-preview-size', removeId: 'j-logo-remove',
+    kind: 'logo', maxMB: 5
+  });
+
+  function resetUploadState() {
+    Object.keys(pendingUploads).forEach(k => pendingUploads[k] = null);
+    Object.keys(existingUrls).forEach(k => existingUrls[k] = null);
+    ['c-avatar', 'c-cv', 'j-logo'].forEach(prefix => {
+      const fi = document.getElementById(prefix + '-file');
+      const pv = document.getElementById(prefix + '-preview');
+      const zn = document.getElementById(prefix + '-zone');
+      if (fi) fi.value = '';
+      if (pv) pv.style.display = 'none';
+      if (zn) zn.classList.remove('has-file');
+    });
+  }
+
+  function showExistingUpload(kind, url, fileName) {
+    if (kind === 'avatar') {
+      existingUrls.avatar_url = url;
+      document.getElementById('c-avatar-preview-img').src = url;
+      document.getElementById('c-avatar-preview-name').textContent = fileName || 'Τρέχουσα φωτογραφία';
+      document.getElementById('c-avatar-preview-size').textContent = 'Αποθηκευμένη';
+      document.getElementById('c-avatar-preview').style.display = 'flex';
+      document.getElementById('c-avatar-zone').classList.add('has-file');
+    } else if (kind === 'cv') {
+      existingUrls.cv_url = url;
+      document.getElementById('c-cv-preview-name').textContent = fileName || 'Τρέχον βιογραφικό';
+      document.getElementById('c-cv-preview-size').textContent = 'Αποθηκευμένο';
+      document.getElementById('c-cv-preview').style.display = 'flex';
+      document.getElementById('c-cv-zone').classList.add('has-file');
+    } else if (kind === 'logo') {
+      existingUrls.logo_url = url;
+      document.getElementById('j-logo-preview-img').src = url;
+      document.getElementById('j-logo-preview-name').textContent = fileName || 'Τρέχον logo';
+      document.getElementById('j-logo-preview-size').textContent = 'Αποθηκευμένο';
+      document.getElementById('j-logo-preview').style.display = 'flex';
+      document.getElementById('j-logo-zone').classList.add('has-file');
+    }
+  }
+
+  async function uploadFile(file, bucket, kind) {
+    if (!file || !currentUser) return null;
+    const ext = file.name.split('.').pop().toLowerCase();
+    const fileName = `${currentUser.id}/${kind}-${Date.now()}.${ext}`;
+
+    const { error } = await db.storage.from(bucket).upload(fileName, file, {
+      cacheControl: '3600',
+      upsert: false
+    });
+
+    if (error) {
+      console.error('Upload error:', error);
+      toast(`Σφάλμα ανεβάσματος: ${error.message}`, 'error');
+      return null;
+    }
+
+    const { data: { publicUrl } } = db.storage.from(bucket).getPublicUrl(fileName);
+    return publicUrl;
+  }
+
+  async function processUploads(forKind) {
+    const result = {};
+    if (forKind === 'candidate') {
+      if (pendingUploads.avatar) {
+        const url = await uploadFile(pendingUploads.avatar, 'avatars', 'avatar');
+        if (url) result.avatar_url = url;
+        else if (existingUrls.avatar_url) result.avatar_url = existingUrls.avatar_url;
+      } else if (existingUrls.avatar_url) {
+        result.avatar_url = existingUrls.avatar_url;
+      } else {
+        result.avatar_url = null;
+      }
+
+      if (pendingUploads.cv) {
+        const url = await uploadFile(pendingUploads.cv, 'documents', 'cv');
+        if (url) result.cv_url = url;
+        else if (existingUrls.cv_url) result.cv_url = existingUrls.cv_url;
+      } else if (existingUrls.cv_url) {
+        result.cv_url = existingUrls.cv_url;
+      } else {
+        result.cv_url = null;
+      }
+    } else if (forKind === 'job') {
+      if (pendingUploads.logo) {
+        const url = await uploadFile(pendingUploads.logo, 'avatars', 'logo');
+        if (url) result.logo_url = url;
+        else if (existingUrls.logo_url) result.logo_url = existingUrls.logo_url;
+      } else if (existingUrls.logo_url) {
+        result.logo_url = existingUrls.logo_url;
+      } else {
+        result.logo_url = null;
+      }
+    }
+    return result;
+  }
+
+  // ===== INIT =====
+  (async () => {
+    await checkAuth();
+    await Promise.all([loadJobs(), loadCandidates()]);
+    await renderHome();
+    renderJobs();
+    renderCandidates();
+  })();
+</script>
+</body>
+</html>
