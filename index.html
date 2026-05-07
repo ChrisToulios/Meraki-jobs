@@ -7,6 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Leaflet (open-source maps) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 <style>
   :root {
     --ink: #0d1b2a;
@@ -219,6 +222,115 @@
     background: rgba(30, 77, 107, 0.08); border-left: 4px solid var(--aegean);
     padding: 16px 20px; margin-bottom: 24px; font-size: 0.9rem;
   }
+
+  /* MAP */
+  .map-wrap {
+    position: relative;
+    background: white;
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  #map {
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+    background: var(--paper-warm);
+    z-index: 1;
+  }
+  .map-toolbar {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper-warm);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .map-toolbar select, .map-toolbar input {
+    background: white;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  .map-summary {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: rgba(13, 27, 42, 0.6);
+  }
+
+  /* Custom marker & popup styles */
+  .leaflet-popup-content-wrapper {
+    border-radius: 0 !important;
+    background: white !important;
+    color: var(--ink) !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important;
+  }
+  .leaflet-popup-content { margin: 16px !important; font-family: 'Manrope', sans-serif !important; }
+  .leaflet-popup-tip { background: white !important; }
+  .map-popup h5 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .map-popup .biz {
+    font-size: 0.82rem;
+    color: var(--aegean);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .map-popup .loc { font-size: 0.8rem; color: rgba(13,27,42,0.65); margin-bottom: 6px; }
+  .map-popup .pay {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    color: var(--terracotta);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .map-popup .btn {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+  }
+  .map-popup .btn:hover { background: var(--aegean-deep); }
+
+  /* Custom Leaflet pin */
+  .custom-pin {
+    width: 32px;
+    height: 40px;
+    background: var(--terracotta);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .custom-pin-inner {
+    width: 14px;
+    height: 14px;
+    background: white;
+    border-radius: 50%;
+    transform: rotate(45deg);
+  }
+  .custom-pin.aegean { background: var(--aegean); }
+  .custom-pin.olive { background: var(--olive); }
+  .custom-pin.gold { background: var(--gold); }
+
+  .map-empty {
+    padding: 80px 20px;
+    text-align: center;
+    color: rgba(13, 27, 42, 0.5);
+    background: white;
+  }
+  .map-empty .icon { font-size: 3rem; display: block; margin-bottom: 12px; opacity: 0.5; }
+  .map-empty p { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.1rem; }
 
   /* MESSAGING */
   .messages-container {
@@ -1114,6 +1226,33 @@
   </section>
 </div>
 
+<!-- MAP -->
+<div class="panel" id="panel-map">
+  <section>
+    <div class="section-head">
+      <h2>🗺 Χάρτης αγγελιών</h2>
+      <div class="section-meta">Ανά περιοχή · Live</div>
+    </div>
+    <div class="map-wrap">
+      <div class="map-toolbar">
+        <label style="margin: 0;">Φίλτρα:</label>
+        <select id="map-filter-category">
+          <option value="">Όλοι οι κλάδοι</option>
+          <option>Εστίαση</option>
+          <option>Ξενοδοχείο</option>
+          <option>Beach Bar / Παραλία</option>
+          <option>Λιανική / Καταστήματα</option>
+          <option>Animation / Ψυχαγωγία</option>
+          <option>Άλλο</option>
+        </select>
+        <input type="text" id="map-filter-search" placeholder="Αναζήτηση...">
+        <span class="map-summary" id="map-summary">—</span>
+      </div>
+      <div id="map"></div>
+    </div>
+  </section>
+</div>
+
 <!-- POST/EDIT JOB -->
 <div class="panel" id="panel-post-job">
   <section>
@@ -1466,6 +1605,7 @@
     let tabsHtml = `
       <button class="tab-btn active" data-panel="home">Αρχική</button>
       <button class="tab-btn" data-panel="jobs">Αγγελίες</button>
+      <button class="tab-btn" data-panel="map">🗺 Χάρτης</button>
       <button class="tab-btn" data-panel="candidates">Υποψήφιοι</button>
     `;
 
@@ -1783,6 +1923,13 @@
     if (name === 'candidates') renderCandidates();
     if (name === 'favorites') renderFavorites();
     if (name === 'messages') await openMessagesPanel();
+    if (name === 'map') {
+      // Wait for panel to be visible (so map gets correct dimensions)
+      setTimeout(async () => {
+        await renderMap();
+        if (mapInstance) mapInstance.invalidateSize();
+      }, 100);
+    }
     if (name === 'post-job') checkJobFormAccess();
     if (name === 'post-candidate') checkCandFormAccess();
     if (name === 'dashboard') await renderDashboard();
@@ -1908,6 +2055,10 @@
     // Upload logo if present
     const uploadResults = await processUploads('job');
 
+    // Try to geocode the location
+    let coords = null;
+    try { coords = await geocodeLocation(location); } catch(e) {}
+
     const jobData = {
       business, title, location, description, email,
       category: document.getElementById('j-category').value,
@@ -1917,6 +2068,8 @@
       perks: getChipValues('j-perks'),
       skills: getChipValues('j-skills'),
       logo_url: uploadResults.logo_url,
+      latitude: coords ? coords.lat : null,
+      longitude: coords ? coords.lng : null,
       user_id: currentUser.id
     };
 
@@ -2179,6 +2332,7 @@
       const active = document.querySelector('.panel.active').id;
       if (active === 'panel-home') renderHome();
       if (active === 'panel-jobs') renderJobs();
+      if (active === 'panel-map') renderMap();
     }).subscribe();
 
   db.channel('candidates-changes')
@@ -2629,6 +2783,250 @@
         }
       );
     }
+  });
+
+  // ===== MAP =====
+  let mapInstance = null;
+  let mapMarkersLayer = null;
+
+  // Pre-defined coordinates for common Greek locations (avoids API calls for known places)
+  const knownLocations = {
+    'σαντορίνη': [36.3932, 25.4615],
+    'σαντορινη': [36.3932, 25.4615],
+    'οία': [36.4614, 25.3754],
+    'οια': [36.4614, 25.3754],
+    'μύκονος': [37.4467, 25.3289],
+    'μυκονος': [37.4467, 25.3289],
+    'πάρος': [37.0856, 25.1556],
+    'παρος': [37.0856, 25.1556],
+    'νάουσα': [37.1239, 25.2370],
+    'ναουσα': [37.1239, 25.2370],
+    'σάντα μαρία': [37.1175, 25.2628],
+    'νάξος': [37.1036, 25.3768],
+    'ναξος': [37.1036, 25.3768],
+    'απόλλωνας': [37.1764, 25.5519],
+    'απολλωνας': [37.1764, 25.5519],
+    'ίος': [36.7333, 25.2833],
+    'ιος': [36.7333, 25.2833],
+    'σκιάθος': [39.1626, 23.4900],
+    'σκιαθος': [39.1626, 23.4900],
+    'κουκουναριές': [39.1167, 23.4167],
+    'σκόπελος': [39.1227, 23.7281],
+    'σκοπελος': [39.1227, 23.7281],
+    'ρόδος': [36.4341, 28.2176],
+    'ροδος': [36.4341, 28.2176],
+    'κως': [36.8932, 27.2877],
+    'κρήτη': [35.2401, 24.8093],
+    'κρητη': [35.2401, 24.8093],
+    'ηράκλειο': [35.3387, 25.1442],
+    'ηρακλειο': [35.3387, 25.1442],
+    'χανιά': [35.5138, 24.0180],
+    'χανια': [35.5138, 24.0180],
+    'ρέθυμνο': [35.3681, 24.4732],
+    'ρεθυμνο': [35.3681, 24.4732],
+    'άγιος νικόλαος': [35.1894, 25.7158],
+    'χαλκιδική': [40.3753, 23.4408],
+    'χαλκιδικη': [40.3753, 23.4408],
+    'σιθωνία': [40.0846, 23.8267],
+    'σιθωνια': [40.0846, 23.8267],
+    'κασσάνδρα': [40.0167, 23.4167],
+    'κασσανδρα': [40.0167, 23.4167],
+    'άθως': [40.1576, 24.3266],
+    'αθήνα': [37.9838, 23.7275],
+    'αθηνα': [37.9838, 23.7275],
+    'θεσσαλονίκη': [40.6401, 22.9444],
+    'θεσσαλονικη': [40.6401, 22.9444],
+    'πάτρα': [38.2466, 21.7346],
+    'πατρα': [38.2466, 21.7346],
+    'λάρισα': [39.6390, 22.4191],
+    'λαρισα': [39.6390, 22.4191],
+    'ιωάννινα': [39.6650, 20.8537],
+    'ιωαννινα': [39.6650, 20.8537],
+    'κέρκυρα': [39.6243, 19.9217],
+    'κερκυρα': [39.6243, 19.9217],
+    'ζάκυνθος': [37.7870, 20.8990],
+    'ζακυνθος': [37.7870, 20.8990],
+    'κεφαλονιά': [38.1755, 20.5731],
+    'κεφαλονια': [38.1755, 20.5731],
+    'λευκάδα': [38.7064, 20.6403],
+    'λευκαδα': [38.7064, 20.6403],
+    'καβάλα': [40.9396, 24.4012],
+    'καβαλα': [40.9396, 24.4012],
+    'βόλος': [39.3681, 22.9425],
+    'βολος': [39.3681, 22.9425],
+    'καλαμάτα': [37.0387, 22.1142],
+    'καλαματα': [37.0387, 22.1142],
+    'ναύπλιο': [37.5687, 22.8016],
+    'ναυπλιο': [37.5687, 22.8016],
+    'πιερία': [40.2716, 22.4985],
+    'πιερια': [40.2716, 22.4985],
+    'πήλιο': [39.4500, 23.0833],
+    'πηλιο': [39.4500, 23.0833],
+  };
+
+  function findKnownCoords(locationStr) {
+    if (!locationStr) return null;
+    const lower = locationStr.toLowerCase().trim();
+
+    // Try full match first
+    if (knownLocations[lower]) return knownLocations[lower];
+
+    // Try each part separated by ", " or " "
+    const parts = lower.split(/[,\s\-]+/).filter(Boolean);
+    for (const part of parts) {
+      if (knownLocations[part]) return knownLocations[part];
+    }
+
+    // Try matching against keys
+    for (const key of Object.keys(knownLocations)) {
+      if (lower.includes(key)) return knownLocations[key];
+    }
+
+    return null;
+  }
+
+  // Geocode using free Nominatim API (OpenStreetMap)
+  async function geocodeLocation(locationStr) {
+    if (!locationStr) return null;
+
+    // Try known coords first
+    const known = findKnownCoords(locationStr);
+    if (known) return { lat: known[0], lng: known[1] };
+
+    // Fallback: Nominatim API (free, no API key needed)
+    try {
+      const query = encodeURIComponent(locationStr + ', Greece');
+      const res = await fetch(`https://nominatim.openstreetmap.org/search?q=${query}&format=json&limit=1&countrycodes=gr`);
+      const data = await res.json();
+      if (data && data.length > 0) {
+        return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+      }
+    } catch (e) {
+      console.warn('Geocode failed for:', locationStr, e);
+    }
+    return null;
+  }
+
+  function getMarkerColorClass(category) {
+    const map = {
+      'Εστίαση': 'aegean',
+      'Ξενοδοχείο': '',
+      'Beach Bar / Παραλία': 'gold',
+      'Λιανική / Καταστήματα': 'olive',
+      'Animation / Ψυχαγωγία': 'gold',
+      'Άλλο': ''
+    };
+    return map[category] || '';
+  }
+
+  function createCustomIcon(category) {
+    const colorClass = getMarkerColorClass(category);
+    return L.divIcon({
+      className: 'custom-marker-wrap',
+      html: `<div class="custom-pin ${colorClass}"><div class="custom-pin-inner"></div></div>`,
+      iconSize: [32, 40],
+      iconAnchor: [16, 40],
+      popupAnchor: [0, -40]
+    });
+  }
+
+  function buildMapPopup(j) {
+    const skills = Array.isArray(j.skills) ? j.skills : [];
+    return `
+      <div class="map-popup">
+        <h5>${escapeHtml(j.title)}</h5>
+        <div class="biz">${escapeHtml(j.business)}</div>
+        <div class="loc">📍 ${escapeHtml(j.location)}</div>
+        ${j.salary ? `<div class="pay">${escapeHtml(j.salary)}</div>` : ''}
+        ${j.period ? `<div class="loc">📅 ${escapeHtml(j.period)}</div>` : ''}
+        <button class="btn map-popup-view" data-job-id="${j.id}">Δες περισσότερα →</button>
+      </div>
+    `;
+  }
+
+  async function initMap() {
+    if (mapInstance) return; // already initialized
+    // Center on Greece
+    mapInstance = L.map('map').setView([38.5, 24.5], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      maxZoom: 18
+    }).addTo(mapInstance);
+    mapMarkersLayer = L.layerGroup().addTo(mapInstance);
+  }
+
+  async function renderMap() {
+    if (!mapInstance) await initMap();
+    mapMarkersLayer.clearLayers();
+
+    const cat = document.getElementById('map-filter-category').value;
+    const search = document.getElementById('map-filter-search').value.toLowerCase().trim();
+
+    let filtered = jobs.filter(j => j.status !== 'closed');
+    if (cat) filtered = filtered.filter(j => j.category === cat);
+    if (search) filtered = filtered.filter(j => 
+      (j.title + j.business + j.description + j.location).toLowerCase().includes(search)
+    );
+
+    let placedCount = 0;
+    const markersToFit = [];
+
+    for (const j of filtered) {
+      let lat = j.latitude;
+      let lng = j.longitude;
+
+      // If coords missing, try to geocode and save
+      if (!lat || !lng) {
+        const coords = await geocodeLocation(j.location);
+        if (coords) {
+          lat = coords.lat;
+          lng = coords.lng;
+          // Save back to db so we don't have to do this again
+          db.from('jobs').update({ latitude: lat, longitude: lng }).eq('id', j.id).then(() => {});
+        }
+      }
+
+      if (lat && lng) {
+        const marker = L.marker([lat, lng], { icon: createCustomIcon(j.category) });
+        marker.bindPopup(buildMapPopup(j));
+        mapMarkersLayer.addLayer(marker);
+        markersToFit.push([lat, lng]);
+        placedCount++;
+      }
+    }
+
+    document.getElementById('map-summary').textContent = 
+      filtered.length === 0 ? 'Καμία αγγελία' : 
+      `${placedCount} από ${filtered.length} αγγελίες στον χάρτη`;
+
+    // Fit bounds
+    if (markersToFit.length > 0) {
+      mapInstance.fitBounds(markersToFit, { padding: [40, 40], maxZoom: 12 });
+    }
+  }
+
+  // Click handler for map popup buttons
+  document.body.addEventListener('click', e => {
+    if (e.target.classList.contains('map-popup-view')) {
+      const jobId = e.target.dataset.jobId;
+      // Switch to jobs panel and scroll to job (simple version: just show jobs)
+      showPanel('jobs');
+      setTimeout(() => {
+        const card = document.querySelector(`#all-jobs .card[data-id="${jobId}"]`);
+        if (card) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.style.boxShadow = '0 0 0 3px var(--terracotta)';
+          setTimeout(() => card.style.boxShadow = '', 2000);
+        }
+      }, 300);
+    }
+  });
+
+  // Filters
+  document.getElementById('map-filter-category').addEventListener('change', renderMap);
+  document.getElementById('map-filter-search').addEventListener('input', () => {
+    clearTimeout(window._mapSearchTimer);
+    window._mapSearchTimer = setTimeout(renderMap, 300);
   });
 
   // ===== MESSAGING =====
